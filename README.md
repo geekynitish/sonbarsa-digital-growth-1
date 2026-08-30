@@ -1,6 +1,6 @@
 # SonBarsa — AI, ML & Digital Growth Website
 
-The official marketing website for **SonBarsa** — an AI &amp; Machine Learning company delivering generative AI, LLM, computer vision, predictive analytics, cloud, web, mobile, and digital marketing solutions since 2008.
+The official  website for **SonBarsa** — an AI &amp; Machine Learning company delivering generative AI, LLM, computer vision, predictive analytics, cloud, web, mobile, and digital marketing solutions since 2008.
 
 **Live site:** [https://sonbarsa.com](https://sonbarsa.com)
 
