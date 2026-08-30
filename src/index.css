@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Telegram-inspired: flat, light, fast. No gradients, no glow, no blur. */
+    --background: 0 0% 100%;
+    --foreground: 222 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 20% 12%;
+
+    /* Primary - Crimson Red (Logo Match), used sparingly */
+    --primary: 350 78% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Deep Charcoal */
+    --secondary: 222 20% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 20% 97%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Logo Blue, used sparingly */
+    --accent: 210 85% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 350 78% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 20% 12%;
+    --sidebar-primary: 350 78% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 97%;
+    --sidebar-accent-foreground: 222 20% 12%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 350 78% 48%;
+  }
+
+  .dark {
+    --background: 222 22% 9%;
+    --foreground: 220 15% 94%;
+
+    --card: 222 20% 12%;
+    --card-foreground: 220 15% 94%;
+
+    --popover: 222 20% 12%;
+    --popover-foreground: 220 15% 94%;
+
+    --primary: 350 78% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 16% 18%;
+    --secondary-foreground: 220 15% 94%;
+
+    --muted: 220 16% 16%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 210 80% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 51%;
+    --destructive-foreground: 220 15% 94%;
+
+    --border: 220 16% 20%;
+    --input: 220 16% 20%;
+    --ring: 350 78% 56%;
+
+    --sidebar-background: 222 22% 9%;
+    --sidebar-foreground: 220 15% 94%;
+    --sidebar-primary: 350 78% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 16% 16%;
+    --sidebar-accent-foreground: 220 15% 94%;
+    --sidebar-border: 220 16% 20%;
+    --sidebar-ring: 350 78% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Same system-font stack telegram.org uses — zero webfont network
+     requests, so text paints instantly with the OS's native UI font. */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  button, a, [role="button"] {
+    @apply touch-manipulation;
+  }
+}
+
+@layer components {
+  /* Telegram.org's actual content width: everything centers in a narrow
+     column, never edge-to-edge. This is the single container used site-wide.
+     Lives in the components layer (not utilities) so that a `max-w-[...]`
+     utility placed alongside it on the same element still wins the cascade. */
+  .tg-container {
+    @apply mx-auto w-full max-w-[600px] px-6;
+  }
+
+  /* Telegram's own nav-link treatment: plain text that only turns brand-color
+     with a thin sliding underline on hover/active, no pill backgrounds. */
+  .tg-nav-link {
+    position: relative;
+    color: hsl(var(--foreground) / 0.75);
+  }
+  .tg-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    bottom: -2px;
+    height: 2px;
+    border-radius: 2px 2px 0 0;
+    background: hsl(var(--primary));
+    transform: scaleX(0.3) scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+  }
+  .tg-nav-link:hover,
+  .tg-nav-link.is-active {
+    color: hsl(var(--primary));
+  }
+  .tg-nav-link:hover::after,
+  .tg-nav-link.is-active::after {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+@layer utilities {
+  .text-accent-word {
+    color: hsl(var(--primary));
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
+}
