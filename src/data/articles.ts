@@ -71,7 +71,7 @@ Embracing these trends requires continuous learning and adaptation. At SonBarsa,
     author: "SonBarsa Team",
     date: "2026-01-10",
     readTime: "8 min read",
-    image: "https://img.sonbarsa.com/blog/digital-marketing-trends-2026.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/digital-marketing-trends-2026.webp",
     tags: ["Digital Marketing", "AI", "Trends", "SEO", "Social Media"]
   },
   {
@@ -138,7 +138,7 @@ As an AWS certified partner, SonBarsa provides end-to-end cloud migration servic
     author: "SonBarsa Team",
     date: "2026-01-08",
     readTime: "10 min read",
-    image: "https://img.sonbarsa.com/blog/aws-cloud-migration-guide.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/aws-cloud-migration-guide.webp",
     tags: ["AWS", "Cloud Computing", "Migration", "DevOps", "Infrastructure"]
   },
   {
@@ -216,7 +216,7 @@ We specialize in e-commerce SEO for platforms like Shopify, WooCommerce, and Mag
     author: "SonBarsa Team",
     date: "2026-01-05",
     readTime: "9 min read",
-    image: "https://img.sonbarsa.com/blog/ecommerce-seo-strategies.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/ecommerce-seo-strategies.webp",
     tags: ["E-commerce", "SEO", "Online Sales", "Digital Marketing", "Shopify"]
   },
   {
@@ -303,7 +303,7 @@ We build custom WhatsApp automation solutions that integrate with your CRM, e-co
     author: "SonBarsa Team",
     date: "2026-01-03",
     readTime: "8 min read",
-    image: "https://img.sonbarsa.com/blog/whatsapp-business-automation.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/whatsapp-business-automation.webp",
     tags: ["WhatsApp", "Chatbots", "Automation", "Customer Engagement", "API"]
   },
   {
@@ -397,7 +397,7 @@ We deliver high-quality mobile applications using the most appropriate technolog
     author: "SonBarsa Team",
     date: "2025-12-28",
     readTime: "10 min read",
-    image: "https://img.sonbarsa.com/blog/mobile-app-development-guide.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/mobile-app-development-guide.webp",
     tags: ["Mobile Apps", "React Native", "Flutter", "iOS", "Android"]
   },
   {
@@ -521,7 +521,7 @@ Our data-driven approach to social media marketing delivers measurable results. 
     author: "SonBarsa Team",
     date: "2025-12-25",
     readTime: "9 min read",
-    image: "https://img.sonbarsa.com/blog/social-media-marketing-roi.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/social-media-marketing-roi.webp",
     tags: ["Social Media", "ROI", "Analytics", "Marketing Strategy", "Advertising"]
   },
   {
@@ -628,7 +628,7 @@ We conduct comprehensive performance audits and implement optimizations that imp
     author: "SonBarsa Team",
     date: "2025-12-20",
     readTime: "11 min read",
-    image: "https://img.sonbarsa.com/blog/website-performance-optimization.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/website-performance-optimization.webp",
     tags: ["Performance", "Core Web Vitals", "SEO", "Web Development", "Speed"]
   },
   {
@@ -754,7 +754,7 @@ From strategy development to content creation and distribution, we help brands t
     author: "SonBarsa Team",
     date: "2025-12-18",
     readTime: "10 min read",
-    image: "https://img.sonbarsa.com/blog/content-marketing-strategy.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/content-marketing-strategy.webp",
     tags: ["Content Marketing", "Strategy", "SEO", "Blogging", "Video Marketing"]
   },
   {
@@ -889,7 +889,7 @@ Our certified PPC specialists manage campaigns across all major platforms. We fo
     author: "SonBarsa Team",
     date: "2025-12-15",
     readTime: "11 min read",
-    image: "https://img.sonbarsa.com/blog/ppc-advertising-optimization.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/ppc-advertising-optimization.webp",
     tags: ["PPC", "Google Ads", "Facebook Ads", "Advertising", "ROI"]
   },
   {
@@ -1038,7 +1038,7 @@ We build and maintain websites on WordPress, headless platforms, and custom solu
     author: "SonBarsa Team",
     date: "2025-12-10",
     readTime: "9 min read",
-    image: "https://img.sonbarsa.com/blog/cms-platform-comparison.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/cms-platform-comparison.webp",
     tags: ["CMS", "WordPress", "Headless", "Web Development", "E-commerce"]
   },
   // NEW SEO-FOCUSED ARTICLES
@@ -1122,7 +1122,7 @@ We help local businesses dominate their market with comprehensive local SEO stra
     author: "SonBarsa Team",
     date: "2026-01-15",
     readTime: "8 min read",
-    image: "https://img.sonbarsa.com/blog/local-seo-small-business-guide-2026.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/local-seo-small-business-guide-2026.webp",
     tags: ["Local SEO", "Google Business Profile", "Small Business", "Reviews", "Mobile SEO"]
   },
   {
@@ -1209,7 +1209,7 @@ Visit Interview.SonBarsa.com to see how AI can revolutionize your recruitment.
     author: "SonBarsa Team",
     date: "2026-01-14",
     readTime: "9 min read",
-    image: "https://img.sonbarsa.com/blog/ai-interview-automation-hiring.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/ai-interview-automation-hiring.webp",
     tags: ["AI", "Hiring", "Interview Automation", "HR Tech", "Recruitment"]
   },
   {
@@ -1303,7 +1303,7 @@ Experience the difference with our comprehensive SEO platform. Start your free t
     author: "SonBarsa Team",
     date: "2026-01-13",
     readTime: "10 min read",
-    image: "https://img.sonbarsa.com/blog/seo-tools-comparison-2026.png",
+    image: "https://img.sonbarsa.com/blog-webp/seo-tools-comparison-2026.webp",
     tags: ["SEO Tools", "Keyword Research", "Rank Tracking", "SEO Software", "Comparison"]
   },
   {
@@ -1401,7 +1401,7 @@ Our team stays current with every Google update. We help businesses maintain and
     author: "SonBarsa Team",
     date: "2026-01-12",
     readTime: "8 min read",
-    image: "https://img.sonbarsa.com/blog/google-algorithm-updates-2026.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/google-algorithm-updates-2026.webp",
     tags: ["Google Updates", "Algorithm", "SEO", "Rankings", "Search"]
   },
   {
@@ -1504,7 +1504,7 @@ We create and optimize video content that drives results. From strategy to produ
     author: "SonBarsa Team",
     date: "2026-01-11",
     readTime: "9 min read",
-    image: "https://img.sonbarsa.com/blog/video-marketing-strategy-youtube-seo.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/video-marketing-strategy-youtube-seo.webp",
     tags: ["Video Marketing", "YouTube SEO", "Content Strategy", "Social Media", "Video Production"]
   },
   {
@@ -1614,7 +1614,7 @@ Our platform provides comprehensive technical SEO audits with actionable recomme
     author: "SonBarsa Team",
     date: "2026-01-10",
     readTime: "12 min read",
-    image: "https://img.sonbarsa.com/blog/technical-seo-audit-checklist.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/technical-seo-audit-checklist.webp",
     tags: ["Technical SEO", "SEO Audit", "Core Web Vitals", "Site Speed", "Crawlability"]
   },
   {
@@ -1718,7 +1718,7 @@ We help B2B companies build authority and generate leads on LinkedIn through str
     author: "SonBarsa Team",
     date: "2026-01-09",
     readTime: "8 min read",
-    image: "https://img.sonbarsa.com/blog/linkedin-b2b-marketing-strategy.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/linkedin-b2b-marketing-strategy.webp",
     tags: ["LinkedIn", "B2B Marketing", "Lead Generation", "Social Media", "Thought Leadership"]
   },
   {
@@ -1830,7 +1830,7 @@ Our team has successfully migrated hundreds of websites without traffic loss. Tr
     author: "SonBarsa Team",
     date: "2026-01-08",
     readTime: "10 min read",
-    image: "https://img.sonbarsa.com/blog/website-redesign-seo-migration.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/website-redesign-seo-migration.webp",
     tags: ["Website Redesign", "SEO Migration", "301 Redirects", "Website Launch", "Technical SEO"]
   },
   {
@@ -1947,7 +1947,7 @@ We use data-driven CRO to help businesses increase conversions. Our average clie
     author: "SonBarsa Team",
     date: "2026-01-07",
     readTime: "9 min read",
-    image: "https://img.sonbarsa.com/blog/conversion-rate-optimization-cro.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/conversion-rate-optimization-cro.webp",
     tags: ["CRO", "Conversion Optimization", "A/B Testing", "UX", "Landing Pages"]
   },
   {
@@ -2013,7 +2013,7 @@ Website: https://sonbarsa.com
     author: "SonBarsa Communications",
     date: "2026-01-18",
     readTime: "4 min read",
-    image: "https://img.sonbarsa.com/blog/sonbarsa-digital-marketing-excellence-announcement.jpg",
+    image: "https://img.sonbarsa.com/blog-webp/sonbarsa-digital-marketing-excellence-announcement.webp",
     tags: ["Press Release", "AI", "SonBarsa Products", "Interview Platform", "SEO Tools", "Company News"]
   }
 ];
