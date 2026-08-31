@@ -44,6 +44,8 @@ export const Navbar = () => {
             src={logo}
             alt="SonBarsa - Digital Marketing & IT Solutions Company"
             className="h-8 w-auto"
+            width={112}
+            height={32}
           />
         </Link>
 

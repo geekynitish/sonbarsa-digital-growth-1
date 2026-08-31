@@ -95,6 +95,9 @@ const Blog = () => {
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
                   className="w-full h-full object-cover"
+                  width={800}
+                  height={450}
+                  fetchPriority="high"
                 />
                 <span className="absolute top-4 left-4 px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-medium">
                   {featuredArticle.category}
@@ -146,6 +149,8 @@ const Blog = () => {
                       src={article.image}
                       alt={article.title}
                       className="w-full h-full object-cover"
+                      width={800}
+                      height={450}
                       loading="lazy"
                     />
                     <span className="absolute top-3 left-3 px-2.5 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium">

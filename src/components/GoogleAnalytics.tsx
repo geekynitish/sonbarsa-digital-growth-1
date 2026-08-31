@@ -14,25 +14,35 @@ export const GoogleAnalytics = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Load Google Analytics script
-    const script1 = document.createElement("script");
-    script1.async = true;
-    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
-    document.head.appendChild(script1);
+    let script1: HTMLScriptElement | null = null;
+    let script2: HTMLScriptElement | null = null;
 
-    const script2 = document.createElement("script");
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${GA_TRACKING_ID}');
-    `;
-    document.head.appendChild(script2);
+    // Load Google Analytics once the browser is idle so it never competes
+    // with the initial paint / LCP for main-thread or network time.
+    const load = () => {
+      script1 = document.createElement("script");
+      script1.async = true;
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+      document.head.appendChild(script1);
+
+      script2 = document.createElement("script");
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GA_TRACKING_ID}');
+      `;
+      document.head.appendChild(script2);
+    };
+
+    const ric = window.requestIdleCallback ?? ((cb: IdleRequestCallback) => window.setTimeout(cb, 1));
+    const cic = window.cancelIdleCallback ?? window.clearTimeout;
+    const handle = ric(load);
 
     return () => {
-      // Cleanup scripts on unmount
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
+      cic(handle);
+      if (script1) document.head.removeChild(script1);
+      if (script2) document.head.removeChild(script2);
     };
   }, []);
 

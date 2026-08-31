@@ -37,7 +37,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="w-full sm:w-[200px]">
             <Link to="/" className="inline-flex items-center gap-2 mb-2.5">
-              <img src={logo} alt="SonBarsa" className="h-6 w-auto" />
+              <img src={logo} alt="SonBarsa" className="h-6 w-auto" width={84} height={24} />
             </Link>
             <p className="text-muted-foreground text-[13px] leading-relaxed">
               A global digital agency since 2008, delivering AI, web, mobile and

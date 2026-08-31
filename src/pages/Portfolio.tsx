@@ -259,6 +259,8 @@ const Portfolio = () => {
                         src={project.image}
                         alt={`${project.title} - ${project.category} project by SonBarsa`}
                         className={project.logo ? "max-w-full max-h-full object-contain" : "w-full h-full object-cover"}
+                        width={600}
+                        height={400}
                         loading="lazy"
                       />
                     )}

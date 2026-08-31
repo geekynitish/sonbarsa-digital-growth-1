@@ -121,6 +121,9 @@ const BlogArticle = () => {
             src={article.image}
             alt={article.title}
             className="w-full aspect-video object-cover rounded-xl"
+            width={800}
+            height={450}
+            fetchPriority="high"
           />
         </div>
 
@@ -216,6 +219,8 @@ const BlogArticle = () => {
                         src={related.image}
                         alt={related.title}
                         className="w-full h-full object-cover"
+                        width={800}
+                        height={450}
                         loading="lazy"
                       />
                     </div>
