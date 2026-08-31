@@ -131,6 +131,7 @@ const Contact = () => {
         {/* Contact Info */}
         <section className="py-12 border-t border-border">
           <div className="tg-container max-w-[640px]">
+            <h2 className="sr-only">Contact information</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
               {contactInfo.map((info) => (
                 <div key={info.title}>

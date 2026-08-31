@@ -60,7 +60,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-2.5">About</h4>
+            <p className="text-sm font-bold mb-2.5">About</p>
             <ul>
               {footerLinks.about.map((link) => (
                 <li key={link.name}>
@@ -76,7 +76,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-2.5">Services</h4>
+            <p className="text-sm font-bold mb-2.5">Services</p>
             <ul>
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -92,7 +92,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-2.5">More</h4>
+            <p className="text-sm font-bold mb-2.5">More</p>
             <ul>
               {footerLinks.more.map((link) => (
                 <li key={link.name}>

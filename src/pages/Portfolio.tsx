@@ -244,6 +244,7 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <section className="py-16 md:py-20">
           <div className="tg-container max-w-[840px]">
+            <h2 className="sr-only">Our projects</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredProjects.map((project) => (
                 <div key={project.title} className="rounded-xl border border-border overflow-hidden group">
