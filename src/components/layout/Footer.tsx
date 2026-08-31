@@ -43,14 +43,14 @@ export const Footer = () => {
               A global digital agency since 2008, delivering AI, web, mobile and
               cloud solutions across India, the UK &amp; the Middle East.
             </p>
-            <div className="flex gap-3 mt-3">
+            <div className="flex gap-1 -ml-2 mt-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4" />
@@ -60,11 +60,14 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h5 className="text-sm font-bold mb-2.5">About</h5>
+            <h4 className="text-sm font-bold mb-2.5">About</h4>
             <ul>
               {footerLinks.about.map((link) => (
-                <li key={link.name} className="text-[14px] leading-[23px]">
-                  <Link to={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="block py-1.5 text-[14px] leading-[23px] text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -73,11 +76,14 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h5 className="text-sm font-bold mb-2.5">Services</h5>
+            <h4 className="text-sm font-bold mb-2.5">Services</h4>
             <ul>
               {footerLinks.services.map((link) => (
-                <li key={link.name} className="text-[14px] leading-[23px]">
-                  <Link to={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="block py-1.5 text-[14px] leading-[23px] text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -86,11 +92,14 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h5 className="text-sm font-bold mb-2.5">More</h5>
+            <h4 className="text-sm font-bold mb-2.5">More</h4>
             <ul>
               {footerLinks.more.map((link) => (
-                <li key={link.name} className="text-[14px] leading-[23px]">
-                  <Link to={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="block py-1.5 text-[14px] leading-[23px] text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -104,11 +113,11 @@ export const Footer = () => {
           <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} SonBarsa. All rights reserved.
           </p>
-          <div className="flex gap-5 text-xs">
-            <a href="mailto:lali@sonbarsa.com" className="text-muted-foreground hover:text-primary transition-colors">
+          <div className="flex gap-3 text-xs">
+            <a href="mailto:lali@sonbarsa.com" className="py-2 text-muted-foreground hover:text-primary transition-colors">
               lali@sonbarsa.com
             </a>
-            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/terms" className="py-2 text-muted-foreground hover:text-primary transition-colors">
               Terms of Service
             </Link>
           </div>
