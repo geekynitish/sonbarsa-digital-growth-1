@@ -1,0 +1,28 @@
+# SonBarsa
+
+> SonBarsa is an AI & Machine Learning company building generative AI, LLMs, computer vision, predictive analytics, AI chatbots, AWS cloud, web, mobile, and SEO/digital marketing solutions for enterprises since 2008.
+
+SonBarsa builds AI products and wraps them in the web, mobile, and marketing systems that turn them into revenue. 274+ clients across India, the UK, and the Middle East trust SonBarsa to ship production AI, not just prototypes.
+
+## Company
+- [About](https://sonbarsa.com/about): Company background, team, and mission.
+- [Portfolio](https://sonbarsa.com/portfolio): Client projects and case studies across AI, e-commerce, and web platforms.
+- [Contact](https://sonbarsa.com/contact): Get in touch with SonBarsa.
+
+## Services
+- [AI & Machine Learning](https://sonbarsa.com/services/ai-ml): Custom ML models, MLOps, and predictive analytics.
+- [Generative AI](https://sonbarsa.com/services/generative-ai): LLM fine-tuning, RAG, and generative AI products.
+- [AI Chatbots & Agents](https://sonbarsa.com/services/chatbots): Conversational AI and autonomous agents.
+- [Intelligent Automation](https://sonbarsa.com/services/automation): Workflow and business process automation.
+- [Data Analytics & BI](https://sonbarsa.com/services/data-analytics): Predictive analytics and business intelligence dashboards.
+- [Cloud & AWS Services](https://sonbarsa.com/services/cloud-aws): AWS cloud architecture, migration, and DevOps.
+- [Web Development](https://sonbarsa.com/services/web-development): Custom web application development.
+- [Mobile App Development](https://sonbarsa.com/services/mobile-apps): Native and cross-platform mobile apps.
+- [CMS Solutions](https://sonbarsa.com/services/cms): WordPress, headless, and custom CMS builds.
+- [Digital Marketing](https://sonbarsa.com/services/digital-marketing): SEO, PPC, and content marketing.
+
+## Blog
+- [Blog](https://sonbarsa.com/blog): Articles on AI, cloud, SEO, and digital marketing.
+
+## Optional
+- [Sitemap](https://sonbarsa.com/sitemap.xml): Full list of indexable pages.
