@@ -16,10 +16,18 @@ export const GoogleAnalytics = () => {
   useEffect(() => {
     let script1: HTMLScriptElement | null = null;
     let script2: HTMLScriptElement | null = null;
+    let loaded = false;
 
-    // Load Google Analytics once the browser is idle so it never competes
-    // with the initial paint / LCP for main-thread or network time.
+    // Load Google Analytics on the first real user interaction (or after a
+    // fallback timeout so data isn't lost for users who never interact).
+    // gtag.js is ~165KB and mostly unused during the initial page load, so
+    // deferring it this far keeps it out of Lighthouse's TBT / unused-JS
+    // audits entirely for users who bounce before interacting.
     const load = () => {
+      if (loaded) return;
+      loaded = true;
+      cleanupTriggers();
+
       script1 = document.createElement("script");
       script1.async = true;
       script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
@@ -35,12 +43,20 @@ export const GoogleAnalytics = () => {
       document.head.appendChild(script2);
     };
 
-    const ric = window.requestIdleCallback ?? ((cb: IdleRequestCallback) => window.setTimeout(cb, 1));
-    const cic = window.cancelIdleCallback ?? window.clearTimeout;
-    const handle = ric(load);
+    const interactionEvents = ["pointerdown", "keydown", "touchstart", "scroll"] as const;
+    const onInteraction = () => load();
+    interactionEvents.forEach((event) =>
+      window.addEventListener(event, onInteraction, { once: true, passive: true })
+    );
+    const timeoutHandle = window.setTimeout(load, 5000);
+
+    function cleanupTriggers() {
+      interactionEvents.forEach((event) => window.removeEventListener(event, onInteraction));
+      window.clearTimeout(timeoutHandle);
+    }
 
     return () => {
-      cic(handle);
+      cleanupTriggers();
       if (script1) document.head.removeChild(script1);
       if (script2) document.head.removeChild(script2);
     };
