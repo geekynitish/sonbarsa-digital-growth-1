@@ -1,0 +1,13 @@
+name = "sonbarsa-decap-oauth"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Secrets (set with `wrangler secret put <NAME>` from this directory — never
+# committed, never hardcoded):
+#   GITHUB_OAUTH_CLIENT_ID      the GitHub OAuth App's Client ID
+#   GITHUB_OAUTH_CLIENT_SECRET  the GitHub OAuth App's Client Secret
+#   OAUTH_STATE_SECRET          any long random string (e.g. `openssl rand -hex 32`)
+#
+# The GitHub OAuth App's "Authorization callback URL" must be set to this
+# Worker's own /callback URL, e.g.:
+#   https://sonbarsa-decap-oauth.<your-subdomain>.workers.dev/callback

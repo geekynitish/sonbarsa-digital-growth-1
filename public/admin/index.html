@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Content Manager — SonBarsa</title>
+  </head>
+  <body>
+    <!-- Reads config.yml from this same directory automatically. -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Registers the "r2" media library (see media-library.js) before
+         Decap's init runs on window load, so image uploads go straight to
+         R2 / img.sonbarsa.com instead of being committed to git. -->
+    <script src="/admin/media-library.js"></script>
+  </body>
+</html>

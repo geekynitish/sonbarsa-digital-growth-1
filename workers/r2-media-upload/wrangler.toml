@@ -1,0 +1,21 @@
+name = "sonbarsa-media-upload"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# R2 bucket that serves img.sonbarsa.com.
+# ⚠️ "sonbarsa-img" was NOT found anywhere in this repo — it was supplied
+# verbally and is unverified. Confirm the exact bucket name in the
+# Cloudflare dashboard (Workers & Pages → R2) before deploying, and fix it
+# here if it differs.
+[[r2_buckets]]
+binding = "IMG_BUCKET"
+bucket_name = "sonbarsa-img"
+
+[vars]
+GITHUB_REPO = "geekynitish/sonbarsa-digital-growth-1"
+PUBLIC_IMG_HOST = "https://img.sonbarsa.com"
+UPLOAD_PREFIX = "blog"
+ALLOWED_ORIGINS = "https://sonbarsa.com,https://www.sonbarsa.com,http://localhost:8080"
+
+# No secrets needed here — authorization is delegated to each editor's own
+# GitHub token (see worker.js). Nothing in this Worker's config is sensitive.
