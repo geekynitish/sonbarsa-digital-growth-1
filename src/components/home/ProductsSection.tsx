@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-shim";
 import { ArrowRight, Target, Users, ExternalLink, Bot, BarChart3, Eye, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 

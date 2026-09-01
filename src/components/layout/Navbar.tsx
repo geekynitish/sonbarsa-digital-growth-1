@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "@/lib/router-shim";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.svg";
@@ -33,7 +33,11 @@ export const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
-  }, [location]);
+    // Depend on the pathname string, not the location object: our router
+    // shim (no client-side router under Astro) returns a fresh object on
+    // every call, which would otherwise re-fire this effect — and force the
+    // menu closed — on every render instead of only on real navigation.
+  }, [location.pathname]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/85 backdrop-blur-xl">

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-shim";
 import { Brain, Sparkles, Cpu, MessageSquare, Globe, BarChart3 } from "lucide-react";
 
 const services = [

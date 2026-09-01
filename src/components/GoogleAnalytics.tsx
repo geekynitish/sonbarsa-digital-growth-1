@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-shim";
 
 declare global {
   interface Window {
@@ -69,7 +69,7 @@ export const GoogleAnalytics = () => {
         page_path: location.pathname + location.search,
       });
     }
-  }, [location]);
+  }, [location.pathname, location.search]);
 
   return null;
 };
