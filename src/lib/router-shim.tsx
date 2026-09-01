@@ -27,7 +27,7 @@ export interface NavLinkRenderProps {
   isPending: boolean;
 }
 
-export interface NavLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "href"> {
+export interface NavLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "href" | "children"> {
   to: string;
   className?: string | ((props: NavLinkRenderProps) => string);
   children?: ReactNode | ((props: NavLinkRenderProps) => ReactNode);

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "@/lib/router-shim";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo.svg?url";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [

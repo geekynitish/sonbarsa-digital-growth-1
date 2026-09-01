@@ -26,9 +26,15 @@ export function ThemeProvider({
   storageKey = "sonbarsa-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  // Guarded for SSR: Astro prerenders this component to static HTML on the
+  // server (no `localStorage`) before it hydrates in the browser. The
+  // Layout's inline head script applies the real stored/system theme to
+  // <html> before first paint, so this only needs to avoid crashing here —
+  // it settles on the correct value once mounted client-side.
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return defaultTheme;
+    return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
