@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Content Manager — SonBarsa</title>
+    <!-- Decap's default config lookup is a *relative* fetch of "config.yml",
+         which breaks once the site drops the trailing slash from /admin/ down
+         to /admin (see wrangler.toml html_handling = "drop-trailing-slash") —
+         the relative URL then resolves against the site root instead of
+         /admin/. Pin it to an absolute path instead. -->
+    <link rel="cms-config-url" type="text/yaml" href="/admin/config.yml" />
   </head>
   <body>
-    <!-- Reads config.yml from this same directory automatically. -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <!-- Registers the "r2" media library (see media-library.js) before
          Decap's init runs on window load, so image uploads go straight to
