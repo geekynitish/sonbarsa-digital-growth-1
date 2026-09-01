@@ -2,6 +2,9 @@ export interface Article {
   id: string;
   slug: string;
   title: string;
+  /** Shorter headline for the <title> tag, so it doesn't get truncated in
+   * Google search results. Falls back to `title` when not set. */
+  seoTitle?: string;
   excerpt: string;
   content: string;
   category: string;
@@ -17,6 +20,7 @@ export const articles: Article[] = [
     id: "1",
     slug: "digital-marketing-trends-2026",
     title: "Top 10 Digital Marketing Trends to Watch in 2026",
+    seoTitle: "Top 10 Digital Marketing Trends 2026",
     excerpt: "Discover the cutting-edge digital marketing strategies that will dominate 2026, from AI-powered personalization to immersive experiences.",
     content: `
 ## The Future of Digital Marketing is Here
@@ -78,6 +82,7 @@ Embracing these trends requires continuous learning and adaptation. At SonBarsa,
     id: "2",
     slug: "aws-cloud-migration-guide",
     title: "Complete Guide to AWS Cloud Migration for Businesses",
+    seoTitle: "AWS Cloud Migration Guide for Businesses",
     excerpt: "Learn the step-by-step process for migrating your business infrastructure to AWS Cloud, including best practices and cost optimization strategies.",
     content: `
 ## Why Migrate to AWS Cloud?
@@ -145,6 +150,7 @@ As an AWS certified partner, SonBarsa provides end-to-end cloud migration servic
     id: "3",
     slug: "ecommerce-seo-strategies",
     title: "E-commerce SEO: Strategies to Boost Online Sales",
+    seoTitle: "E-commerce SEO Strategies to Boost Sales",
     excerpt: "Master the art of e-commerce SEO with proven strategies that drive organic traffic and increase conversions for your online store.",
     content: `
 ## E-commerce SEO Fundamentals
@@ -223,6 +229,7 @@ We specialize in e-commerce SEO for platforms like Shopify, WooCommerce, and Mag
     id: "4",
     slug: "whatsapp-business-automation",
     title: "WhatsApp Business Automation: Complete Implementation Guide",
+    seoTitle: "WhatsApp Business Automation Guide",
     excerpt: "Learn how to leverage WhatsApp Business API for customer engagement, support automation, and sales growth with chatbots and workflows.",
     content: `
 ## The Power of WhatsApp for Business
@@ -310,6 +317,7 @@ We build custom WhatsApp automation solutions that integrate with your CRM, e-co
     id: "5",
     slug: "mobile-app-development-guide",
     title: "Mobile App Development: Native vs Cross-Platform in 2026",
+    seoTitle: "Native vs Cross-Platform App Development",
     excerpt: "Compare native and cross-platform mobile app development approaches to make the best choice for your business needs and budget.",
     content: `
 ## Choosing the Right Mobile Development Approach
@@ -404,6 +412,7 @@ We deliver high-quality mobile applications using the most appropriate technolog
     id: "6",
     slug: "social-media-marketing-roi",
     title: "Maximizing Social Media Marketing ROI: A Data-Driven Approach",
+    seoTitle: "Maximize Social Media Marketing ROI",
     excerpt: "Learn how to measure, analyze, and optimize your social media marketing efforts for maximum return on investment.",
     content: `
 ## Beyond Vanity Metrics
@@ -528,6 +537,7 @@ Our data-driven approach to social media marketing delivers measurable results. 
     id: "7",
     slug: "website-performance-optimization",
     title: "Website Performance Optimization: Speed Up Your Site in 2026",
+    seoTitle: "Website Performance Optimization Guide",
     excerpt: "Comprehensive guide to improving website loading speed, Core Web Vitals, and overall performance for better user experience and SEO.",
     content: `
 ## Why Performance Matters
@@ -635,6 +645,7 @@ We conduct comprehensive performance audits and implement optimizations that imp
     id: "8",
     slug: "content-marketing-strategy",
     title: "Building a Content Marketing Strategy That Drives Results",
+    seoTitle: "Content Marketing Strategy That Works",
     excerpt: "Create a comprehensive content marketing strategy that attracts, engages, and converts your target audience into loyal customers.",
     content: `
 ## Content Marketing in 2026
@@ -761,6 +772,7 @@ From strategy development to content creation and distribution, we help brands t
     id: "9",
     slug: "ppc-advertising-optimization",
     title: "PPC Advertising Optimization: Maximize Your Ad Spend",
+    seoTitle: "PPC Advertising Optimization Guide",
     excerpt: "Advanced strategies for optimizing Google Ads, Meta Ads, and other PPC campaigns to reduce costs and improve conversions.",
     content: `
 ## Mastering Paid Advertising
@@ -896,6 +908,7 @@ Our certified PPC specialists manage campaigns across all major platforms. We fo
     id: "10",
     slug: "cms-platform-comparison",
     title: "CMS Platform Comparison: WordPress vs Headless vs Custom",
+    seoTitle: "CMS Platform Comparison 2026",
     excerpt: "Compare leading CMS platforms to find the best solution for your business website, blog, or e-commerce needs.",
     content: `
 ## Choosing the Right CMS
@@ -1046,6 +1059,7 @@ We build and maintain websites on WordPress, headless platforms, and custom solu
     id: "11",
     slug: "local-seo-small-business-guide-2026",
     title: "Local SEO for Small Businesses: Complete Guide for 2026",
+    seoTitle: "Local SEO Guide for Small Businesses",
     excerpt: "Dominate local search results and attract nearby customers with proven local SEO strategies, Google Business Profile optimization, and review management.",
     content: `
 ## Why Local SEO Matters for Small Businesses
@@ -1129,7 +1143,8 @@ We help local businesses dominate their market with comprehensive local SEO stra
     id: "12",
     slug: "ai-interview-automation-hiring",
     title: "AI-Powered Interview Automation: Transforming the Hiring Process",
-    excerpt: "Discover how AI interview platforms like Interview.SonBarsa.com are revolutionizing recruitment with automated screening, smart scheduling, and unbiased assessments.",
+    seoTitle: "AI Interview Automation for Hiring",
+    excerpt: "Discover how AI interview platforms like Interview.SonBarsa.com are revolutionizing recruitment with automated screening and unbiased assessments.",
     content: `
 ## The Future of Hiring is Here
 
@@ -1216,6 +1231,7 @@ Visit Interview.SonBarsa.com to see how AI can revolutionize your recruitment.
     id: "13",
     slug: "seo-tools-comparison-2026",
     title: "Best SEO Tools in 2026: Complete Comparison Guide",
+    seoTitle: "Best SEO Tools 2026: Comparison Guide",
     excerpt: "Compare top SEO tools including SEO.SonBarsa.com. Find the right platform for keyword research, rank tracking, competitor analysis, and technical audits.",
     content: `
 ## Choosing the Right SEO Tool
@@ -1310,6 +1326,7 @@ Experience the difference with our comprehensive SEO platform. Start your free t
     id: "14",
     slug: "google-algorithm-updates-2026",
     title: "Google Algorithm Updates 2026: What You Need to Know",
+    seoTitle: "Google Algorithm Updates 2026",
     excerpt: "Stay ahead of Google's latest algorithm changes. Learn about core updates, helpful content systems, and how to maintain your search rankings.",
     content: `
 ## Understanding Google's 2026 Algorithm Landscape
@@ -1408,6 +1425,7 @@ Our team stays current with every Google update. We help businesses maintain and
     id: "15",
     slug: "video-marketing-strategy-youtube-seo",
     title: "Video Marketing Strategy & YouTube SEO: Complete Playbook",
+    seoTitle: "Video Marketing & YouTube SEO Strategy",
     excerpt: "Master video marketing with proven YouTube SEO techniques, content strategies, and optimization tips that drive views and conversions.",
     content: `
 ## Video Marketing in 2026
@@ -1511,6 +1529,7 @@ We create and optimize video content that drives results. From strategy to produ
     id: "16",
     slug: "technical-seo-audit-checklist",
     title: "Technical SEO Audit Checklist: 50+ Points for 2026",
+    seoTitle: "Technical SEO Audit Checklist 2026",
     excerpt: "Complete technical SEO audit guide covering crawlability, indexation, site speed, mobile optimization, structured data, and security essentials.",
     content: `
 ## Why Technical SEO Matters
@@ -1621,6 +1640,7 @@ Our platform provides comprehensive technical SEO audits with actionable recomme
     id: "17",
     slug: "linkedin-b2b-marketing-strategy",
     title: "LinkedIn B2B Marketing: Generate Leads and Build Authority",
+    seoTitle: "LinkedIn B2B Marketing Strategy Guide",
     excerpt: "Master LinkedIn for B2B marketing with strategies for content creation, lead generation, company page optimization, and thought leadership.",
     content: `
 ## LinkedIn: The B2B Powerhouse
@@ -1725,6 +1745,7 @@ We help B2B companies build authority and generate leads on LinkedIn through str
     id: "18",
     slug: "website-redesign-seo-migration",
     title: "Website Redesign & SEO Migration: Preserve Rankings During Changes",
+    seoTitle: "Website Redesign & SEO Migration Guide",
     excerpt: "Complete guide to redesigning your website without losing search rankings. Learn the SEO migration process to maintain organic traffic.",
     content: `
 ## Redesigning Without Disaster
@@ -1837,6 +1858,7 @@ Our team has successfully migrated hundreds of websites without traffic loss. Tr
     id: "19",
     slug: "conversion-rate-optimization-cro",
     title: "Conversion Rate Optimization (CRO): Double Your Conversions",
+    seoTitle: "Conversion Rate Optimization (CRO) Guide",
     excerpt: "Master conversion rate optimization with A/B testing, UX improvements, landing page optimization, and data-driven strategies.",
     content: `
 ## Beyond Traffic: Focus on Conversions
@@ -1954,6 +1976,7 @@ We use data-driven CRO to help businesses increase conversions. Our average clie
     id: "20",
     slug: "sonbarsa-digital-marketing-excellence-announcement",
     title: "[PR] SonBarsa Launches Advanced AI-Powered Digital Marketing Suite",
+    seoTitle: "SonBarsa Launches AI Marketing Suite",
     excerpt: "SonBarsa announces the launch of Interview.SonBarsa.com and SEO.SonBarsa.com, expanding its digital solutions portfolio with AI-driven platforms.",
     content: `
 ## Press Release

@@ -50,7 +50,7 @@ const jsonLd = {
 ---
 
 <Layout
-  title={`${article.title} | SonBarsa Blog`}
+  title={`${article.seoTitle ?? article.title} | SonBarsa Blog`}
   description={article.excerpt}
   keywords={article.tags.join(", ")}
   canonical={canonical}
