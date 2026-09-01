@@ -1,0 +1,88 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { BlogArticleBody } from "@/components/blog/BlogArticleBody";
+import { ArticleMarkdown } from "@/components/blog/ArticleMarkdown";
+import { ShareButtons } from "@/components/blog/ShareButtons";
+import { TagsList } from "@/components/blog/TagsList";
+import { BlogArticleRelated } from "@/components/blog/BlogArticleRelated";
+import { articles, getRelatedArticles } from "@/data/articles";
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article, relatedArticles: getRelatedArticles(article.slug, 3) },
+  }));
+}
+
+const { article, relatedArticles } = Astro.props;
+const canonical = `https://sonbarsa.com/blog/${article.slug}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: article.title,
+  description: article.excerpt,
+  image: [article.image],
+  datePublished: article.date,
+  dateModified: article.date,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": canonical,
+  },
+  author: {
+    "@type": "Organization",
+    name: article.author,
+    url: "https://sonbarsa.com/",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "SonBarsa",
+    url: "https://sonbarsa.com/",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://img.sonbarsa.com/img/logo-color.svg",
+    },
+  },
+};
+---
+
+<Layout
+  title={`${article.title} | SonBarsa Blog`}
+  description={article.excerpt}
+  keywords={article.tags.join(", ")}
+  canonical={canonical}
+  ogType="article"
+  ogImage={article.image}
+  jsonLd={jsonLd}
+  articleMeta={{
+    publishedTime: article.date,
+    author: article.author,
+    section: article.category,
+    tags: article.tags,
+  }}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <BlogArticleBody article={article} />
+
+    <section class="py-16">
+      <div class="tg-container max-w-[640px]">
+        <ArticleMarkdown content={article.content} />
+
+        <div class="mt-12 pt-8 border-t border-border grid sm:grid-cols-2 gap-8">
+          <ShareButtons client:load slug={article.slug} title={article.title} />
+          <TagsList tags={article.tags} />
+        </div>
+      </div>
+    </section>
+
+    <BlogArticleRelated relatedArticles={relatedArticles} />
+  </main>
+
+  <Footer />
+</Layout>

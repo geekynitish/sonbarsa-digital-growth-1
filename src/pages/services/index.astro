@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { AllServicesList } from "@/components/services/AllServicesList";
+import { services } from "@/data/services";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "SonBarsa AI, ML, Cloud and Digital Services",
+  url: "https://sonbarsa.com/services",
+  itemListElement: services.map((s, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Service",
+      name: s.title,
+      url: `https://sonbarsa.com/services/${s.slug}`,
+      provider: { "@id": "https://sonbarsa.com/#organization" },
+    },
+  })),
+};
+---
+
+<Layout
+  title="AI, ML, Cloud &amp; Digital Marketing Services | SonBarsa"
+  description="SonBarsa services: Generative AI, LLM development, AI chatbots, computer vision, predictive analytics, MLOps, AWS cloud, web &amp; mobile development, SEO and digital marketing."
+  canonical="https://sonbarsa.com/services"
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <AllServicesList />
+  </main>
+
+  <Footer />
+</Layout>

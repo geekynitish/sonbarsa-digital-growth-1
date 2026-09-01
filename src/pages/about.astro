@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { AboutContent } from "@/components/about/AboutContent";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  url: "https://sonbarsa.com/about",
+  name: "About SonBarsa",
+  mainEntity: { "@id": "https://sonbarsa.com/#organization" },
+};
+---
+
+<Layout
+  title="About SonBarsa — AI, ML &amp; Cloud Solutions Company Since 2008"
+  description="Meet SonBarsa, an AI &amp; Machine Learning company since 2008 helping enterprises adopt generative AI, LLMs, computer vision, predictive analytics, AWS cloud and digital growth."
+  keywords="about SonBarsa, AI company India, machine learning company, generative AI experts, LLM consulting, AI ML services, AWS cloud partner, digital transformation"
+  canonical="https://sonbarsa.com/about"
+  ogTitle="About SonBarsa — AI &amp; ML Solutions Company Since 2008"
+  ogDescription="AI & ML experts since 2008. Generative AI, LLMs, computer vision, predictive analytics, cloud, web and mobile."
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <AboutContent />
+  </main>
+
+  <Footer />
+</Layout>

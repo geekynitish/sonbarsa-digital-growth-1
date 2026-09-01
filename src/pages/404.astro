@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { Footer } from "@/components/layout/Footer";
+import { NotFoundContent } from "@/components/NotFoundContent";
+---
+
+<Layout
+  title="Page Not Found | SonBarsa"
+  description="The page you're looking for doesn't exist or has moved."
+  canonical="https://sonbarsa.com/404"
+  robots="noindex, nofollow"
+>
+  <SiteHeader client:load />
+  <NotFoundContent />
+  <Footer />
+</Layout>

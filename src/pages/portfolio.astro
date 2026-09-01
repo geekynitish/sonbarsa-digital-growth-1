@@ -1,0 +1,69 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
+import { PortfolioFilterGrid } from "@/components/portfolio/PortfolioFilterGrid";
+import { PortfolioIndustries } from "@/components/portfolio/PortfolioIndustries";
+
+// Kept in sync with the `projects` list in PortfolioFilterGrid.tsx for the
+// ItemList JSON-LD (titles only — the schema doesn't need the full dataset).
+const projectTitles = [
+  "Social Media Audience Analytics",
+  "Enterprise Social Media Suite",
+  "Creator Video Engagement Tool",
+  "Mobile Gaming App",
+  "Digital News Platform",
+  "AI Interview Platform",
+  "AI SEO Management Suite",
+  "AI Chatbot for E-commerce",
+  "Predictive Analytics Dashboard",
+  "AI Content Generator",
+  "Altech Kings of Structure",
+  "Pernia's Pop-Up Shop",
+  "Aashni & Co",
+  "Agashe Store",
+  "Meena Bazaar",
+  "Custom Mobile App",
+  "Enterprise Web Portal",
+  "Digital Marketing Campaign",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "SonBarsa Portfolio",
+  url: "https://sonbarsa.com/portfolio",
+  about: { "@id": "https://sonbarsa.com/#organization" },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: projectTitles.map((title, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: { "@type": "CreativeWork", name: title },
+    })),
+  },
+};
+---
+
+<Layout
+  title="AI Projects &amp; Portfolio — Generative AI, ML, Cloud, Web | SonBarsa"
+  description="Explore SonBarsa's portfolio of AI &amp; ML projects: AI Interview Platform, AI SEO Suite, GPT-4 chatbots, predictive analytics, computer vision, plus web, mobile and e-commerce builds."
+  keywords="AI portfolio, machine learning projects, AI interview platform, AI SEO platform, GPT-4 chatbot, predictive analytics dashboard, computer vision, generative AI projects, SonBarsa portfolio"
+  canonical="https://sonbarsa.com/portfolio"
+  ogTitle="AI Projects &amp; Portfolio | SonBarsa"
+  ogDescription="Live AI/ML, cloud, web and e-commerce projects delivered by SonBarsa."
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <PortfolioHero />
+    <PortfolioFilterGrid client:load />
+    <PortfolioIndustries />
+  </main>
+
+  <Footer />
+</Layout>

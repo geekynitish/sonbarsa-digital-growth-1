@@ -1,0 +1,46 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { HeroSection } from "@/components/home/HeroSection";
+import { ServicesSection } from "@/components/home/ServicesSection";
+import { AboutSection } from "@/components/home/AboutSection";
+import { ClientsSection } from "@/components/home/ClientsSection";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "SonBarsa — AI & Machine Learning Company",
+  url: "https://sonbarsa.com/",
+  description: "AI & ML company delivering generative AI, LLMs, computer vision, chatbots, predictive analytics, AWS cloud, web, mobile and SEO solutions.",
+  isPartOf: { "@id": "https://sonbarsa.com/#website" },
+  about: [
+    "Artificial Intelligence", "Machine Learning", "Generative AI", "LLM",
+    "Computer Vision", "AI Chatbots", "Predictive Analytics", "MLOps",
+    "AWS Cloud", "Web Development", "Mobile App Development", "SEO",
+  ],
+};
+---
+
+<Layout
+  title="SonBarsa — AI &amp; Machine Learning Company | Generative AI, Cloud, Web &amp; SEO"
+  description="SonBarsa is a leading AI &amp; Machine Learning company building generative AI, LLMs, computer vision, AI chatbots, predictive analytics, AWS cloud, web, mobile and SEO solutions for enterprises since 2008."
+  keywords="SonBarsa, AI company, artificial intelligence company, machine learning company, generative AI, LLM development, AI chatbot, computer vision, predictive analytics, MLOps, AI consulting, AWS cloud, digital marketing, SEO, web development, mobile app development"
+  canonical="https://sonbarsa.com/"
+  ogTitle="SonBarsa — AI &amp; Machine Learning Company"
+  ogDescription="Generative AI, LLMs, computer vision, chatbots, predictive analytics, AWS cloud, web, mobile and SEO solutions. Trusted by enterprises since 2008."
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <HeroSection />
+    <ServicesSection />
+    <AboutSection />
+    <ClientsSection />
+  </main>
+
+  <Footer />
+</Layout>

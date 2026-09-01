@@ -1,0 +1,42 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { BlogIndexContent } from "@/components/blog/BlogIndexContent";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "SonBarsa Industry Insights",
+  url: "https://sonbarsa.com/blog",
+  description: "Expert insights on AI, machine learning, generative AI, cloud, web development, and digital marketing.",
+  publisher: {
+    "@id": "https://sonbarsa.com/#organization",
+    "@type": "Organization",
+    name: "SonBarsa",
+    url: "https://sonbarsa.com/",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://img.sonbarsa.com/img/logo-color.svg",
+    },
+  },
+};
+---
+
+<Layout
+  title="Industry Insights & Digital Marketing Blog | SonBarsa"
+  description="Expert insights on digital marketing, web development, cloud computing, and business growth. Stay updated with the latest industry trends and strategies."
+  keywords="digital marketing blog, web development tips, AWS cloud guides, SEO strategies, social media marketing, e-commerce optimization"
+  canonical="https://sonbarsa.com/blog"
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <BlogIndexContent />
+  </main>
+
+  <Footer />
+</Layout>

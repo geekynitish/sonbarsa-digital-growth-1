@@ -1,0 +1,196 @@
+---
+import "../index.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogType?: "website" | "article";
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+  keywords?: string;
+  robots?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  articleMeta?: {
+    publishedTime: string;
+    author: string;
+    section: string;
+    tags: string[];
+  };
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogType = "website",
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = "https://img.sonbarsa.com/img/logo-color.svg",
+  twitterTitle = ogTitle,
+  twitterDescription = ogDescription,
+  twitterImage = ogImage,
+  keywords,
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  jsonLd,
+  articleMeta,
+} = Astro.props;
+
+const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+// Same Organization / WebSite / ProfessionalService graph that used to sit
+// in the static index.html shell for every SPA route — now emitted on every
+// prerendered page so it's always present in the raw HTML.
+const organizationGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sonbarsa.com/#organization",
+      name: "SonBarsa",
+      alternateName: ["SonBarsa Technologies", "SonBarsa AI"],
+      url: "https://sonbarsa.com/",
+      logo: "https://img.sonbarsa.com/img/logo-color.svg",
+      image: "https://img.sonbarsa.com/img/logo-color.svg",
+      description:
+        "SonBarsa is an AI and Machine Learning company delivering generative AI, LLMs, computer vision, predictive analytics, chatbots, AWS cloud, web, mobile and digital marketing solutions since 2008.",
+      foundingDate: "2008",
+      email: "lali@sonbarsa.com",
+      telephone: "+911416761830",
+      address: { "@type": "PostalAddress", addressCountry: "IN" },
+      sameAs: [
+        "https://twitter.com/sonbarsa",
+        "https://www.linkedin.com/company/sonbarsa",
+        "https://www.instagram.com/sonbarsa",
+      ],
+      knowsAbout: [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Generative AI",
+        "Large Language Models",
+        "Computer Vision",
+        "Natural Language Processing",
+        "Predictive Analytics",
+        "MLOps",
+        "AI Chatbots",
+        "AWS Cloud Computing",
+        "Web Development",
+        "Mobile App Development",
+        "Search Engine Optimization",
+        "Digital Marketing",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sonbarsa.com/#website",
+      url: "https://sonbarsa.com/",
+      name: "SonBarsa",
+      publisher: { "@id": "https://sonbarsa.com/#organization" },
+      inLanguage: "en",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://sonbarsa.com/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://sonbarsa.com/#service",
+      name: "SonBarsa AI & Digital Solutions",
+      provider: { "@id": "https://sonbarsa.com/#organization" },
+      areaServed: ["IN", "US", "AE", "GB"],
+      serviceType: [
+        "AI & Machine Learning Development",
+        "Generative AI Solutions",
+        "LLM Fine-Tuning",
+        "Computer Vision",
+        "AI Chatbot Development",
+        "Predictive Analytics",
+        "AWS Cloud Services",
+        "Web Development",
+        "Mobile App Development",
+        "SEO & Digital Marketing",
+      ],
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      // Applied before first paint so the site never flashes the wrong
+      // theme — mirrors ThemeProvider's own localStorage/system-preference
+      // logic (src/components/ThemeProvider.tsx) so it stays a no-op once
+      // that component hydrates and takes over.
+      (function () {
+        try {
+          var stored = localStorage.getItem("sonbarsa-ui-theme");
+          var theme = stored || "light";
+          var root = document.documentElement;
+          root.classList.remove("light", "dark");
+          if (theme === "system") {
+            var isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            root.classList.add(isDark ? "dark" : "light");
+          } else {
+            root.classList.add(theme);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0f" />
+
+    <link rel="preconnect" href="https://img.sonbarsa.com" crossorigin />
+    <link rel="dns-prefetch" href="https://img.sonbarsa.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="author" content="SonBarsa" />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:site_name" content="SonBarsa" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+
+    {articleMeta && (
+      <>
+        <meta property="article:published_time" content={articleMeta.publishedTime} />
+        <meta property="article:author" content={articleMeta.author} />
+        <meta property="article:section" content={articleMeta.section} />
+        {articleMeta.tags.map((tag) => (
+          <meta property="article:tag" content={tag} />
+        ))}
+      </>
+    )}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@sonBarsa" />
+    <meta name="twitter:title" content={twitterTitle} />
+    <meta name="twitter:description" content={twitterDescription} />
+    <meta name="twitter:image" content={twitterImage} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationGraph)} />
+    {jsonLdBlocks.map((block) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { ContactInfo } from "@/components/contact/ContactInfo";
+import { ContactForm } from "@/components/contact/ContactForm";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact SonBarsa",
+  url: "https://sonbarsa.com/contact",
+  about: { "@id": "https://sonbarsa.com/#organization" },
+  mainEntity: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    email: "lali@sonbarsa.com",
+    telephone: "+911416761830",
+    areaServed: ["IN", "US", "AE", "GB"],
+    availableLanguage: ["en", "hi"],
+  },
+};
+---
+
+<Layout
+  title="Contact SonBarsa — Talk to AI, ML &amp; Cloud Experts"
+  description="Contact SonBarsa for AI &amp; Machine Learning consulting, generative AI, LLMs, chatbots, predictive analytics, AWS cloud, web, mobile and SEO. Free consultation."
+  keywords="contact SonBarsa, AI consulting, machine learning consultation, hire AI developers, generative AI experts, LLM consulting, cloud consulting"
+  canonical="https://sonbarsa.com/contact"
+  ogTitle="Contact SonBarsa — AI &amp; ML Experts"
+  ogDescription="Free consultation for AI, ML, cloud and digital projects."
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <ContactInfo />
+    <ContactForm client:load />
+  </main>
+
+  <Footer />
+</Layout>

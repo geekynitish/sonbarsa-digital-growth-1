@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+import { ServiceDetail } from "@/components/services/ServiceDetail";
+import { services } from "@/data/services";
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+
+const title = `${service.title} Services | SonBarsa`;
+const canonical = `https://sonbarsa.com/services/${service.slug}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: service.title,
+  description: service.description,
+  url: canonical,
+  provider: { "@id": "https://sonbarsa.com/#organization" },
+};
+---
+
+<Layout
+  title={title}
+  description={service.description}
+  canonical={canonical}
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <ServiceDetail service={service} />
+  </main>
+
+  <Footer />
+</Layout>
