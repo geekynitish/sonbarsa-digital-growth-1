@@ -72,4 +72,4 @@ The project deploys as a static site (`npm run build` → `dist/`). It's current
 
 ## License
 
-© SonBarsa. All rights reserved.
+© SonBarsa. All rights reserved @2026.
