@@ -1,13 +1,19 @@
 ---
-title: "AI-Powered Interview Automation: Transforming the Hiring Process"
-seoTitle: "AI Interview Automation for Hiring"
-description: "Discover how AI interview platforms like Interview.SonBarsa.com are revolutionizing recruitment with automated screening and unbiased assessments."
+title: "AI-Powered Interview Automation: Transforming the Industries  Hiring Process"
+seoTitle: AI Interview Automation for Hiring
+description: Discover how AI interview platforms like Interview.SonBarsa.com are
+  revolutionizing recruitment with automated screening and unbiased assessments.
 pubDate: 2026-01-14
-heroImage: "https://img.sonbarsa.com/blog-webp/ai-interview-automation-hiring.webp"
-category: "HR Technology"
-author: "SonBarsa Team"
-readTime: "9 min read"
-tags: ["AI", "Hiring", "Interview Automation", "HR Tech", "Recruitment"]
+heroImage: https://img.sonbarsa.com/blog-webp/ai-interview-automation-hiring.webp
+category: HR Technology
+author: SonBarsa Team
+readTime: 9 min read
+tags:
+  - AI
+  - Hiring
+  - Interview Automation
+  - HR Tech
+  - Recruitment
 ---
 
 ## The Future of Hiring is Here
