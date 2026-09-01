@@ -8,12 +8,13 @@ import { ArticleMarkdown } from "@/components/blog/ArticleMarkdown";
 import { ShareButtons } from "@/components/blog/ShareButtons";
 import { TagsList } from "@/components/blog/TagsList";
 import { BlogArticleRelated } from "@/components/blog/BlogArticleRelated";
-import { articles, getRelatedArticles } from "@/data/articles";
+import { getAllArticles, getRelatedArticlesFrom } from "@/data/articles";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const articles = await getAllArticles();
   return articles.map((article) => ({
     params: { slug: article.slug },
-    props: { article, relatedArticles: getRelatedArticles(article.slug, 3) },
+    props: { article, relatedArticles: getRelatedArticlesFrom(articles, article.slug, 3) },
   }));
 }
 

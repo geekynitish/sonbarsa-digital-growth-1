@@ -1,8 +1,8 @@
 import { Link } from "@/lib/router-shim";
-import { articles } from "@/data/articles";
+import type { Article } from "@/data/articles";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
 
-export const BlogIndexContent = () => {
+export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
   const featuredArticle = articles[0];
   const otherArticles = articles.slice(1);
 

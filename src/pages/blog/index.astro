@@ -4,6 +4,9 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { BlogIndexContent } from "@/components/blog/BlogIndexContent";
+import { getAllArticles } from "@/data/articles";
+
+const articles = await getAllArticles();
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -36,7 +39,7 @@ const jsonLd = {
   <GoogleAnalytics client:idle />
 
   <main>
-    <BlogIndexContent />
+    <BlogIndexContent articles={articles} />
   </main>
 
   <Footer />
