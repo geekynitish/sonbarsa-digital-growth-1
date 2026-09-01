@@ -6,7 +6,11 @@ backend:
   base_url: https://sonbarsa-decap-oauth.nitish.workers.dev
   auth_endpoint: auth
 
-publish_mode: simple
+# Every entry is drafted on its own branch/PR instead of committing straight
+# to `branch` above — nothing triggers a Cloudflare build until you open the
+# "Editorial Workflow" board (left sidebar) and hit Publish yourself, so you
+# can draft several posts and batch them into one deploy.
+publish_mode: editorial_workflow
 
 # Custom media library (see public/admin/media-library.js): every image
 # picked in the admin panel is uploaded straight to R2 / img.sonbarsa.com
