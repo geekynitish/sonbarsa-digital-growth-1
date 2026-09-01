@@ -11,7 +11,7 @@ import { NotFoundContent } from "@/components/NotFoundContent";
   canonical="https://sonbarsa.com/404"
   robots="noindex, nofollow"
 >
-  <SiteHeader client:load />
+  <SiteHeader client:load pathname={Astro.url.pathname} />
   <NotFoundContent />
   <Footer />
 </Layout>

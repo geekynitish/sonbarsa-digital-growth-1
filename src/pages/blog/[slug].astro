@@ -64,7 +64,7 @@ const jsonLd = {
     tags: article.tags,
   }}
 >
-  <SiteHeader client:load />
+  <SiteHeader client:load pathname={Astro.url.pathname} />
   <GoogleAnalytics client:idle />
 
   <main>

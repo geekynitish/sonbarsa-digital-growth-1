@@ -31,7 +31,7 @@ const jsonLd = {
   canonical="https://sonbarsa.com/blog"
   jsonLd={jsonLd}
 >
-  <SiteHeader client:load />
+  <SiteHeader client:load pathname={Astro.url.pathname} />
   <GoogleAnalytics client:idle />
 
   <main>

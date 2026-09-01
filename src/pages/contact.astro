@@ -32,7 +32,7 @@ const jsonLd = {
   ogDescription="Free consultation for AI, ML, cloud and digital projects."
   jsonLd={jsonLd}
 >
-  <SiteHeader client:load />
+  <SiteHeader client:load pathname={Astro.url.pathname} />
   <GoogleAnalytics client:idle />
 
   <main>

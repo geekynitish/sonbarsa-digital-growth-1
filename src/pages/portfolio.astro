@@ -56,7 +56,7 @@ const jsonLd = {
   ogDescription="Live AI/ML, cloud, web and e-commerce projects delivered by SonBarsa."
   jsonLd={jsonLd}
 >
-  <SiteHeader client:load />
+  <SiteHeader client:load pathname={Astro.url.pathname} />
   <GoogleAnalytics client:idle />
 
   <main>

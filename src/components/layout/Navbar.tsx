@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "@/lib/router-shim";
+import { Link } from "@/lib/router-shim";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.svg?url";
@@ -25,19 +25,30 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-export const Navbar = () => {
+interface NavbarProps {
+  pathname: string;
+}
+
+// `pathname` comes from Astro.url.pathname at build time (passed down via
+// SiteHeader), not react-router's useLocation(). It has to be correct in
+// the very first render: React doesn't re-apply a mismatched className
+// during hydration unless the component re-renders for some other reason,
+// so if this depended on a client-only value the active nav link would
+// silently stay wrong (highlighting "Home") on every page until the user
+// interacted with something.
+export const Navbar = ({ pathname }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const location = useLocation();
+
+  // Astro.url.pathname carries a trailing slash for every route except "/"
+  // (it mirrors the emitted /route/index.html path); nav hrefs never do —
+  // strip it so "/contact/" still matches the "/contact" link.
+  const normalizedPathname = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
-    // Depend on the pathname string, not the location object: our router
-    // shim (no client-side router under Astro) returns a fresh object on
-    // every call, which would otherwise re-fire this effect — and force the
-    // menu closed — on every render instead of only on real navigation.
-  }, [location.pathname]);
+  }, [normalizedPathname]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/85 backdrop-blur-xl">
@@ -66,7 +77,7 @@ export const Navbar = () => {
                 to={link.href}
                 className={cn(
                   "tg-nav-link flex items-center gap-1 py-2 text-[15px]",
-                  location.pathname === link.href && "is-active"
+                  normalizedPathname === link.href && "is-active"
                 )}
               >
                 {link.name}
@@ -139,7 +150,7 @@ export const Navbar = () => {
                 to={link.href}
                 className={cn(
                   "block px-3 py-2.5 rounded-lg font-medium transition-colors",
-                  location.pathname === link.href
+                  normalizedPathname === link.href
                     ? "text-primary bg-primary/5"
                     : "text-foreground/80 hover:text-primary hover:bg-muted"
                 )}

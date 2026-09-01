@@ -23,7 +23,7 @@ const jsonLd = {
   ogDescription="AI & ML experts since 2008. Generative AI, LLMs, computer vision, predictive analytics, cloud, web and mobile."
   jsonLd={jsonLd}
 >
-  <SiteHeader client:load />
+  <SiteHeader client:load pathname={Astro.url.pathname} />
   <GoogleAnalytics client:idle />
 
   <main>
