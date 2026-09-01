@@ -15,7 +15,9 @@ export function getStaticPaths() {
 
 const { service } = Astro.props;
 
-const title = `${service.title} Services | SonBarsa`;
+const title = service.title.endsWith("Services")
+  ? `${service.title} | SonBarsa`
+  : `${service.title} Services | SonBarsa`;
 const canonical = `https://sonbarsa.com/services/${service.slug}`;
 
 const jsonLd = {
