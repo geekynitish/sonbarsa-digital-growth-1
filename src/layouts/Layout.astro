@@ -21,6 +21,10 @@ export interface Props {
     section: string;
     tags: string[];
   };
+  /** Only blog and portfolio pages actually load images from
+   * img.sonbarsa.com — preconnecting on every other page just wastes a
+   * connection setup Lighthouse flags as unused. */
+  preconnectImgHost?: boolean;
 }
 
 const {
@@ -38,6 +42,7 @@ const {
   robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   jsonLd,
   articleMeta,
+  preconnectImgHost = false,
 } = Astro.props;
 
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
@@ -148,8 +153,12 @@ const organizationGraph = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0f" />
 
-    <link rel="preconnect" href="https://img.sonbarsa.com" crossorigin />
-    <link rel="dns-prefetch" href="https://img.sonbarsa.com" />
+    {preconnectImgHost && (
+      <>
+        <link rel="preconnect" href="https://img.sonbarsa.com" crossorigin />
+        <link rel="dns-prefetch" href="https://img.sonbarsa.com" />
+      </>
+    )}
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
     <title>{title}</title>
