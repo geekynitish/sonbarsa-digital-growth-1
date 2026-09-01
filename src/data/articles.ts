@@ -18,6 +18,10 @@ export interface Article {
 }
 
 const WORDS_PER_MINUTE = 200;
+// Used when a post has no heroImage yet (e.g. drafted before an image was
+// uploaded) — an <img src=""> would make browsers re-request the current
+// page, so every post needs a real src.
+const FALLBACK_HERO_IMAGE = "https://img.sonbarsa.com/img/logo-color.svg";
 
 function estimateReadTime(body: string): string {
   const words = body.trim().split(/\s+/).filter(Boolean).length;
@@ -38,7 +42,7 @@ function toArticle(entry: CollectionEntry<"blog">): Article {
     author: data.author,
     date: data.pubDate.toISOString().slice(0, 10),
     readTime: data.readTime ?? estimateReadTime(body),
-    image: data.heroImage ?? "",
+    image: data.heroImage || FALLBACK_HERO_IMAGE,
     tags: data.tags,
   };
 }
