@@ -3,10 +3,7 @@ backend:
   repo: geekynitish/sonbarsa-digital-growth-1
   branch: astro-migration
   # OAuth handshake origin — the sonbarsa-decap-oauth Worker.
-  # ⚠️ Replace <your-subdomain> once the Worker is deployed
-  # (`wrangler deploy` prints the real *.workers.dev URL), or point this at
-  # a custom domain/route if one is mapped to it later.
-  base_url: https://sonbarsa-decap-oauth.<your-subdomain>.workers.dev
+  base_url: https://sonbarsa-decap-oauth.nitish.workers.dev
   auth_endpoint: auth
 
 publish_mode: simple
@@ -17,9 +14,7 @@ publish_mode: simple
 # ever committed to git.
 media_library:
   name: r2
-  # ⚠️ Replace <your-subdomain> once the sonbarsa-media-upload Worker is
-  # deployed.
-  upload_url: https://sonbarsa-media-upload.<your-subdomain>.workers.dev/upload
+  upload_url: https://sonbarsa-media-upload.nitish.workers.dev/upload
 
 collections:
   - name: blog

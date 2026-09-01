@@ -1,6 +1,7 @@
 name = "sonbarsa-decap-oauth"
 main = "worker.js"
 compatibility_date = "2024-11-01"
+account_id = "5f24d6d0670efc9831c1ecef7b7a2871"
 
 # Secrets (set with `wrangler secret put <NAME>` from this directory — never
 # committed, never hardcoded):

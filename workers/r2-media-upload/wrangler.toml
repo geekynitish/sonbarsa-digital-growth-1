@@ -1,15 +1,14 @@
 name = "sonbarsa-media-upload"
 main = "worker.js"
 compatibility_date = "2024-11-01"
+account_id = "5f24d6d0670efc9831c1ecef7b7a2871"
 
-# R2 bucket that serves img.sonbarsa.com.
-# ⚠️ "sonbarsa-img" was NOT found anywhere in this repo — it was supplied
-# verbally and is unverified. Confirm the exact bucket name in the
-# Cloudflare dashboard (Workers & Pages → R2) before deploying, and fix it
-# here if it differs.
+# R2 bucket that serves img.sonbarsa.com. Confirmed via `wrangler r2 bucket
+# list` on the account hosting sonbarsa-digital-growth-1 (2026-09-01) — the
+# earlier guessed name "sonbarsa-img" was wrong.
 [[r2_buckets]]
 binding = "IMG_BUCKET"
-bucket_name = "sonbarsa-img"
+bucket_name = "imgsonbarsa"
 
 [vars]
 GITHUB_REPO = "geekynitish/sonbarsa-digital-growth-1"
