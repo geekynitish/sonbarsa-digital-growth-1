@@ -3,6 +3,7 @@ title: "How Generative AI Is Reshaping Business Strategy in 2026"
 seoTitle: "Generative AI Business Strategy 2026"
 description: "A practical look at how generative AI moved from pilot projects to core business strategy in 2026, and what leaders need to get right."
 pubDate: 2026-08-20
+heroImage: "https://img.sonbarsa.com/img/logo-color.svg"
 category: "Artificial Intelligence"
 author: "SonBarsa Team"
 tags: ["AI", "Generative AI", "Business Strategy", "LLMs", "Digital Transformation"]

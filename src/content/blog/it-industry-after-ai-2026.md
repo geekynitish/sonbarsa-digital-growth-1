@@ -3,6 +3,7 @@ title: "The IT Industry After AI: How Software and IT Services Are Evolving"
 seoTitle: "IT Industry After AI 2026"
 description: "AI hasn't shrunk the IT industry -- it's restructured it. Here's how software development, IT services, and staffing models are changing in 2026."
 pubDate: 2026-09-01
+heroImage: "https://img.sonbarsa.com/img/logo-color.svg"
 category: "IT Industry"
 author: "SonBarsa Team"
 tags: ["IT Industry", "AI", "Software Development", "IT Services", "Future of Work"]

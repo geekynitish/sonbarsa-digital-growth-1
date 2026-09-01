@@ -3,6 +3,7 @@ title: "The Robotics Revolution: How Automation Is Transforming Industries in 20
 seoTitle: "Robotics Automation Trends 2026"
 description: "Robotics has moved well beyond factory floors. Here's how automation is reshaping logistics, retail, healthcare, and service businesses in 2026."
 pubDate: 2026-08-23
+heroImage: "https://img.sonbarsa.com/img/logo-color.svg"
 category: "Robotics"
 author: "SonBarsa Team"
 tags: ["Robotics", "Automation", "AI", "Manufacturing", "Logistics"]
