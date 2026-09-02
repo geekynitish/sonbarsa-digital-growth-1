@@ -3,7 +3,7 @@ title: "AI in E-commerce: Personalization and Automation Strategies for 2026"
 seoTitle: AI E-commerce Personalization 2026
 description: How online retailers are using AI for personalization, customer
   service, and inventory in 2026 -- and the strategies actually moving revenue.
-pubDate: 2026-08-28
+pubDate: 2026-09-02
 heroImage: https://img.sonbarsa.com/blog/1788329570539-frame-80.png
 category: E-commerce
 author: SonBarsa Team
