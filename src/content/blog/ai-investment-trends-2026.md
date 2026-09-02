@@ -1,12 +1,18 @@
 ---
 title: "AI Investment Trends 2026: Where Smart Capital Is Flowing"
-seoTitle: "AI Investment Trends 2026"
-description: "From infrastructure to applied AI startups, here's where investors are placing their bets in 2026 and what it signals for businesses."
+seoTitle: AI Investment Trends 2026
+description: From infrastructure to applied AI startups, here's where investors
+  are placing their bets in 2026 and what it signals for businesses.
 pubDate: 2026-08-26
-heroImage: "https://img.sonbarsa.com/img/logo-color.svg"
-category: "Investment"
-author: "SonBarsa Team"
-tags: ["Investment", "AI", "Venture Capital", "FinTech", "Startups"]
+heroImage: https://img.sonbarsa.com/blog/1788329777206-screenshot-2026-09-02-at-11-45-57.png
+category: Investment
+author: SonBarsa Team
+tags:
+  - Investment
+  - AI
+  - Venture Capital
+  - FinTech
+  - Startups
 ---
 
 ## The Shift From Infrastructure to Applications
