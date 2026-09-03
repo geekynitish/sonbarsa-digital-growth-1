@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { NotFoundContent } from "@/components/NotFoundContent";
 ---
@@ -12,6 +13,7 @@ import { NotFoundContent } from "@/components/NotFoundContent";
   robots="noindex, nofollow"
 >
   <SiteHeader client:load pathname={Astro.url.pathname} />
+  <GoogleAnalytics client:idle />
   <NotFoundContent />
   <Footer />
 </Layout>
