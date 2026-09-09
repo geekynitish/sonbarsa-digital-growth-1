@@ -1,9 +1,41 @@
 import { useState } from "react";
-import { ExternalLink, PieChart, Building2, Video, Gamepad2 } from "lucide-react";
+import { ExternalLink, PieChart, Building2, Video, Gamepad2, Landmark, Users, HandCoins, LineChart } from "lucide-react";
 
-const categories = ["All", "AI Solutions", "Media & Publishing", "Social & Media Tech", "E-commerce", "Web", "App", "Digital Marketing"];
+const categories = ["All", "AI Solutions", "FinTech", "Media & Publishing", "Social & Media Tech", "E-commerce", "Web", "App", "Digital Marketing"];
 
 const projects = [
+  {
+    title: "Sonbarsa Loan Management System",
+    category: "FinTech",
+    icon: Landmark,
+    iconColor: "bg-indigo-600",
+    description: "End-to-end loan application, approval, disbursement, EMI scheduling, and repayment & overdue tracking for lenders and NBFCs.",
+    technologies: ["Loan Origination", "EMI Scheduling", "Repayment Tracking", "Overdue Alerts"],
+  },
+  {
+    title: "Sonbarsa Finance CRM",
+    category: "FinTech",
+    icon: Users,
+    iconColor: "bg-sky-600",
+    description: "Leads, customer follow-up, sales pipeline, and relationship management built for lending and finance teams.",
+    technologies: ["Lead Management", "Sales Pipeline", "Follow-up Automation", "Customer 360"],
+  },
+  {
+    title: "Sonbarsa Collection & Recovery Tool",
+    category: "FinTech",
+    icon: HandCoins,
+    iconColor: "bg-amber-600",
+    description: "Overdue customer tracking, collection allocation, automated reminders, and field-agent tracking across car, home, and bike loans.",
+    technologies: ["Collection Allocation", "Automated Reminders", "Field-Agent Tracking", "Overdue Recovery"],
+  },
+  {
+    title: "Sonbarsa Financial Analytics Dashboard",
+    category: "FinTech",
+    icon: LineChart,
+    iconColor: "bg-emerald-600",
+    description: "Portfolio, revenue, NPA/overdue, collection efficiency, and branch & agent performance analytics for lenders.",
+    technologies: ["Portfolio Analytics", "NPA Tracking", "Collection Efficiency", "Branch Performance"],
+  },
   {
     title: "Social Media Audience Analytics",
     category: "Social & Media Tech",
