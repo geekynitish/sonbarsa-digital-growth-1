@@ -1,11 +1,20 @@
 ---
-title: "Sonbarsa Loan Management System: End-to-End Lending, From Application to Recovery"
-seoTitle: "Sonbarsa Loan Management System (LMS)"
-description: "Sonbarsa's Loan Management System handles loan application, approval, disbursement, EMI scheduling, and repayment & overdue tracking in one platform."
+title: "Sonbarsa Loan Management System: End-to-End Lending, From Application to
+  Recovery"
+seoTitle: Sonbarsa Loan Management System (LMS)
+description: Sonbarsa's Loan Management System handles loan application,
+  approval, disbursement, EMI scheduling, and repayment & overdue tracking in
+  one platform.
 pubDate: 2026-09-09
-category: "FinTech"
-author: "SonBarsa Team"
-tags: ["FinTech", "Loan Management System", "NBFC Software", "EMI Tracking", "SonBarsa Products"]
+heroImage: https://img.sonbarsa.com/blog/1789050745321-screenshot-2026-09-10-at-20-00-50.png
+category: FinTech
+author: SonBarsa Team
+tags:
+  - FinTech
+  - Loan Management System
+  - NBFC Software
+  - EMI Tracking
+  - SonBarsa Products
 ---
 
 ## Lending Runs on Spreadsheets Longer Than It Should
