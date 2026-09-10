@@ -58,9 +58,9 @@ export const Navbar = ({ pathname }: NavbarProps) => {
           <img
             src={logo}
             alt="SonBarsa - Digital Marketing & IT Solutions Company"
-            className="h-8 w-auto"
-            width={112}
-            height={32}
+            className="h-12 w-auto"
+            width={168}
+            height={48}
           />
         </Link>
 
