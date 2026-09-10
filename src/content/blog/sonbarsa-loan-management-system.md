@@ -1,7 +1,7 @@
 ---
 title: "Sonbarsa Loan Management System: End-to-End Lending, From Application to
   Recovery"
-seoTitle: Sonbarsa Loan Management System (LMS)
+seoTitle: Sonbarsa Loan Management System | Sonvarsa Finance
 description: Sonbarsa's Loan Management System handles loan application,
   approval, disbursement, EMI scheduling, and repayment & overdue tracking in
   one platform.
