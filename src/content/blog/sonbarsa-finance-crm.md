@@ -1,11 +1,19 @@
 ---
-title: "Sonbarsa Finance CRM: A Sales Pipeline Built for Lenders, Not Generic Sales Teams"
-seoTitle: "Sonbarsa Finance CRM for Lenders"
-description: "Sonbarsa Finance CRM manages leads, customer follow-up, sales pipeline, and relationship management for loan and finance businesses."
+title: "Sonbarsa Finance CRM: A Sales Pipeline Built for Lenders, Not Generic
+  Sales Teams"
+seoTitle: Sonbarsa Finance CRM for Lenders
+description: Sonbarsa Finance CRM manages leads, customer follow-up, sales
+  pipeline, and relationship management for loan and finance businesses.
 pubDate: 2026-09-09
-category: "FinTech"
-author: "SonBarsa Team"
-tags: ["FinTech", "Finance CRM", "Lead Management", "Sales Pipeline", "SonBarsa Products"]
+heroImage: https://img.sonbarsa.com/blog/1789050962519-screenshot-2026-09-10-at-20-04-52.png
+category: FinTech
+author: SonBarsa Team
+tags:
+  - FinTech
+  - Finance CRM
+  - Lead Management
+  - Sales Pipeline
+  - SonBarsa Products
 ---
 
 ## Generic CRMs Don't Understand a Loan Pipeline
