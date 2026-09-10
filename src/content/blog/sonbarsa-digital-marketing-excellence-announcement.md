@@ -1,13 +1,21 @@
 ---
-title: "[PR] SonBarsa Launches Advanced AI-Powered Digital Marketing Suite"
-seoTitle: "SonBarsa Launches AI Marketing Suite"
-description: "SonBarsa announces the launch of Interview.SonBarsa.com and SEO.SonBarsa.com, expanding its digital solutions portfolio with AI-driven platforms."
+title: SonBarsa Launches Advanced AI-Powered Digital Marketing Suite
+seoTitle: SonBarsa Launches AI Marketing Suite
+description: SonBarsa announces the launch of Interview.SonBarsa.com and
+  SEO.SonBarsa.com, expanding its digital solutions portfolio with AI-driven
+  platforms.
 pubDate: 2026-01-18
-heroImage: "https://img.sonbarsa.com/blog-webp/sonbarsa-digital-marketing-excellence-announcement.webp"
-category: "Press Release"
-author: "SonBarsa Communications"
-readTime: "4 min read"
-tags: ["Press Release", "AI", "SonBarsa Products", "Interview Platform", "SEO Tools", "Company News"]
+heroImage: https://img.sonbarsa.com/blog-webp/sonbarsa-digital-marketing-excellence-announcement.webp
+category: Press Release
+author: SonBarsa Communications
+readTime: 4 min read
+tags:
+  - Press Release
+  - AI
+  - SonBarsa Products
+  - Interview Platform
+  - SEO Tools
+  - Company News
 ---
 
 ## Press Release
