@@ -1,11 +1,20 @@
 ---
-title: "Sonbarsa Collection & Recovery Tool: Turning Overdue Accounts Into a Managed Process"
-seoTitle: "Sonbarsa Collection & Recovery Tool"
-description: "Sonbarsa's Collection & Recovery Tool manages overdue customers, collection allocation, reminders, and field-agent tracking for car, home, and bike loans."
+title: "Sonbarsa Collection & Recovery Tool: Turning Overdue Accounts Into a
+  Managed Process"
+seoTitle: Sonbarsa Collection & Recovery Tool
+description: Sonbarsa's Collection & Recovery Tool manages overdue customers,
+  collection allocation, reminders, and field-agent tracking for car, home, and
+  bike loans.
 pubDate: 2026-09-09
-category: "FinTech"
-author: "SonBarsa Team"
-tags: ["FinTech", "Collections", "Recovery", "Field Agent Tracking", "SonBarsa Products"]
+heroImage: https://img.sonbarsa.com/blog/1789051002813-screenshot-2026-09-10-at-20-05-29.png
+category: FinTech
+author: SonBarsa Team
+tags:
+  - FinTech
+  - Collections
+  - Recovery
+  - Field Agent Tracking
+  - SonBarsa Products
 ---
 
 ## Overdue Accounts Need a Process, Not Just a List
