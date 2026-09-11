@@ -7,16 +7,11 @@ routes = [
   { pattern = "www.sonbarsa.com", custom_domain = true }
 ]
 
-# Cloudflare D1 Database binding for lead capture:
-# To bind a live D1 database on Cloudflare, create a database in Cloudflare:
-#   `npx wrangler d1 create sonbarsa-db` (or via Cloudflare Dashboard -> D1)
-# then uncomment the lines below and replace database_id with your UUID.
-#
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "sonbarsa-db"
-# database_id = "REPLACE_WITH_YOUR_CLOUDFLARE_D1_DATABASE_ID"
-# migrations_dir = "migrations"
+[[d1_databases]]
+binding = "DB"
+database_name = "sonbarsa-db"
+database_id = "dfd7782d-a322-4cef-8c41-295eb5a18f37"
+migrations_dir = "migrations"
 
 [assets]
 directory = "./dist"
