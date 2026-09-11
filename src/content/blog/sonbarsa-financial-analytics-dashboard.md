@@ -1,11 +1,20 @@
 ---
-title: "Sonbarsa Financial Analytics Dashboard: Portfolio, NPA, and Collection Efficiency in One View"
-seoTitle: "Sonbarsa Financial Analytics Dashboard"
-description: "Sonbarsa's Financial Analytics Dashboard tracks portfolio, revenue, NPA/overdue, collection efficiency, and branch & agent performance for lenders."
+title: "Sonbarsa Financial Analytics Dashboard: Portfolio, NPA, and Collection
+  Efficiency in One View"
+seoTitle: Sonbarsa Financial Analytics Dashboard
+description: Sonbarsa's Financial Analytics Dashboard tracks portfolio, revenue,
+  NPA/overdue, collection efficiency, and branch & agent performance for
+  lenders.
 pubDate: 2026-09-09
-category: "FinTech"
-author: "SonBarsa Team"
-tags: ["FinTech", "Financial Analytics", "NPA", "Collection Efficiency", "SonBarsa Products"]
+heroImage: https://img.sonbarsa.com/blog/1789051048478-screenshot-2026-09-10-at-20-04-11.png
+category: FinTech
+author: SonBarsa Team
+tags:
+  - FinTech
+  - Financial Analytics
+  - NPA
+  - Collection Efficiency
+  - SonBarsa Products
 ---
 
 ## Lending Decisions Are Only as Good as the Numbers Behind Them
