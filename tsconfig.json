@@ -7,6 +7,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["@testing-library/jest-dom"],
     "skipLibCheck": true,
     "verbatimModuleSyntax": false,
     "strict": false,
@@ -17,5 +18,5 @@
     "noFallthroughCasesInSwitch": false
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules", "src/tests/**", "vitest.config.ts"]
 }

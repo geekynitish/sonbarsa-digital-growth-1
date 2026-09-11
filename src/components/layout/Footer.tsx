@@ -1,5 +1,5 @@
 import { Link } from "@/lib/router-shim";
-import { Twitter, Linkedin, Instagram } from "lucide-react";
+import { X, Linkedin, Instagram } from "lucide-react";
 import logo from "@/assets/logo.svg?url";
 
 const footerLinks = {
@@ -10,6 +10,8 @@ const footerLinks = {
     { name: "Blog", href: "/blog" },
   ],
   services: [
+    { name: "AI & Machine Learning", href: "/services/ai-ml" },
+    { name: "Generative AI", href: "/services/generative-ai" },
     { name: "Digital Marketing", href: "/services/digital-marketing" },
     { name: "Web Development", href: "/services/web-development" },
     { name: "Mobile Apps", href: "/services/mobile-apps" },
@@ -24,7 +26,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Twitter, href: "https://twitter.com/sonbarsa", label: "Twitter" },
+  { icon: X, href: "https://twitter.com/sonbarsa", label: "X (Twitter)" },
   { icon: Linkedin, href: "https://linkedin.com/company/sonbarsa", label: "LinkedIn" },
   { icon: Instagram, href: "https://instagram.com/sonbarsa", label: "Instagram" },
 ];

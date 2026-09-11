@@ -1,4 +1,4 @@
-import { Share2, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Share2, X, Linkedin, Facebook } from "lucide-react";
 
 export const ShareButtons = ({ slug, title }: { slug: string; title: string }) => {
   const shareUrl = `https://sonbarsa.com/blog/${slug}`;
@@ -22,9 +22,9 @@ export const ShareButtons = ({ slug, title }: { slug: string; title: string }) =
         <button
           onClick={() => handleShare('twitter')}
           className="p-2.5 bg-muted rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
-          aria-label="Share on Twitter"
+          aria-label="Share on X (Twitter)"
         >
-          <Twitter className="w-4 h-4" />
+          <X className="w-4 h-4" />
         </button>
         <button
           onClick={() => handleShare('linkedin')}

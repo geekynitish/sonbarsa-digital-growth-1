@@ -5,7 +5,11 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { ProductsSection } from "@/components/home/ProductsSection";
 import { AboutSection } from "@/components/home/AboutSection";
+import { WhyUsSection } from "@/components/home/WhyUsSection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { TeamSection } from "@/components/home/TeamSection";
 import { ClientsSection } from "@/components/home/ClientsSection";
 
 const jsonLd = {
@@ -30,15 +34,20 @@ const jsonLd = {
   canonical="https://sonbarsa.com/"
   ogTitle="SonBarsa — AI &amp; Machine Learning Company"
   ogDescription="Generative AI, LLMs, computer vision, chatbots, predictive analytics, AWS cloud, web, mobile and SEO solutions. Trusted by enterprises since 2008."
+  ogImage="https://img.sonbarsa.com/img/og-preview.png"
   jsonLd={jsonLd}
 >
   <SiteHeader client:load pathname={Astro.url.pathname} />
   <GoogleAnalytics client:idle />
 
   <main>
-    <HeroSection />
+    <HeroSection client:load />
     <ServicesSection />
+    <ProductsSection client:load />
     <AboutSection />
+    <WhyUsSection />
+    <TestimonialsSection />
+    <TeamSection />
     <ClientsSection />
   </main>
 

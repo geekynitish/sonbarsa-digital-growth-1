@@ -1,3 +1,7 @@
+import { ArrowRight, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/lib/router-shim";
+
 export const HeroSection = () => {
   return (
     <section className="pt-20 pb-6 md:pt-24 md:pb-8 flex items-center justify-center">
@@ -18,7 +22,22 @@ export const HeroSection = () => {
           India, the UK, and the Middle East trust us to ship, not just prototype.
         </p>
 
-        <dl className="mt-6 sm:mt-8 grid grid-cols-4 gap-4 sm:gap-8">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button size="lg" asChild>
+            <Link to="/services">
+              Explore AI Solutions
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link to="/contact">
+              <Calendar className="w-4 h-4" />
+              Book a Consultation
+            </Link>
+          </Button>
+        </div>
+
+        <dl className="mt-8 sm:mt-10 grid grid-cols-4 gap-4 sm:gap-8">
           {[
             { value: "274+", label: "Clients" },
             { value: "421+", label: "Projects" },

@@ -2,28 +2,28 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Saul Goodman",
-    role: "CEO & Founder",
+    name: "Rajesh Kumar",
+    role: "CEO, FinTech Startup, Mumbai",
     image: "https://img.sonbarsa.com/img/testimonial-1.jpg",
-    content: "The team was incredibly knowledgeable and always up-to-date on the latest trends and best practices in digital marketing. They worked tirelessly to optimize my website, improve my search engine rankings, and create engaging content that resonated with my audience.",
+    content: "The SonBarsa team was incredibly knowledgeable and always up-to-date on the latest AI and ML trends. They built our predictive analytics pipeline in just 6 weeks — what our in-house team estimated would take 6 months. Truly exceptional.",
   },
   {
-    name: "Sara Wilsson",
-    role: "Designer",
+    name: "Priya Sharma",
+    role: "Head of Product, E-commerce Platform",
     image: "https://img.sonbarsa.com/img/testimonial-2.jpg",
-    content: "Overall, I am extremely satisfied with the quality of service I received from SonBarsa, and would highly recommend them to any business looking for reliable and effective IT solutions. Their expertise and professionalism made all the difference in the success of my business.",
+    content: "Overall, I am extremely satisfied with the quality of service I received from SonBarsa. Their AI chatbot reduced our customer support tickets by 40% within the first month. Would highly recommend them to any business looking for reliable and effective AI solutions.",
   },
   {
-    name: "Jena Karlis",
-    role: "Store Owner",
+    name: "James Whitfield",
+    role: "CTO, Healthcare SaaS, London",
     image: "https://img.sonbarsa.com/img/testimonial-3.jpg",
-    content: "Throughout the entire process, the team was communicative, and kept me informed every step of the way. They were always available to answer any questions or concerns I had, and provided excellent customer service.",
+    content: "Throughout the entire process, the team was communicative and kept us informed every step of the way. Their computer vision solution for our medical imaging platform is now processing 10,000+ scans per day in production — impressive engineering work.",
   },
   {
-    name: "Matt Brandon",
-    role: "Freelancer",
+    name: "Khalid Al-Rashid",
+    role: "Managing Director, Logistics Company, Dubai",
     image: "https://img.sonbarsa.com/img/testimonial-4.jpg",
-    content: "I recently had the pleasure of working with SonBarsa for my business needs, and I can confidently say that the experience was nothing short of exceptional. From the moment I contacted them, the team was professional, knowledgeable, and efficient.",
+    content: "I recently partnered with SonBarsa for our digital transformation, and the experience was nothing short of exceptional. Their AWS cloud migration cut our infrastructure costs by 35%, and the new mobile app they built has a 4.8-star rating on the App Store.",
   },
 ];
 

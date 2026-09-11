@@ -1,29 +1,29 @@
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin, X } from "lucide-react";
 
 const team = [
   {
     name: "Satya Prakash",
     role: "Chief Executive Officer",
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "",
+    twitter: "",
   },
   {
     name: "Moly",
     role: "Product Manager",
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "",
+    twitter: "",
   },
   {
     name: "Pranaw S",
     role: "CTO",
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "",
+    twitter: "",
   },
   {
     name: "Lali",
     role: "Co-Founder",
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "https://linkedin.com/in/lali-sonbarsa",
+    twitter: "",
   },
 ];
 
@@ -56,20 +56,28 @@ export const TeamSection = () => {
               <h3 className="font-bold text-sm">{member.name}</h3>
               <p className="text-xs text-muted-foreground mb-2">{member.role}</p>
               <div className="flex items-center justify-center gap-2">
-                <a
-                  href={member.linkedin}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label={`${member.name}'s LinkedIn`}
-                >
-                  <Linkedin className="w-3.5 h-3.5" />
-                </a>
-                <a
-                  href={member.twitter}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label={`${member.name}'s Twitter`}
-                >
-                  <Twitter className="w-3.5 h-3.5" />
-                </a>
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label={`${member.name}'s LinkedIn`}
+                  >
+                    <Linkedin className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {member.twitter && (
+                  <a
+                    href={member.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label={`${member.name}'s X (Twitter)`}
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
             </div>
           ))}

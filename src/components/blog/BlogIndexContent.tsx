@@ -1,12 +1,20 @@
+import { useState, useMemo } from "react";
 import { Link } from "@/lib/router-shim";
 import type { Article } from "@/data/articles";
-import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Tag, X } from "lucide-react";
 
 export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
-  const featuredArticle = articles[0];
-  const otherArticles = articles.slice(1);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const categories = [...new Set(articles.map(a => a.category))];
+  const categories = useMemo(() => [...new Set(articles.map(a => a.category))], [articles]);
+
+  const filteredArticles = useMemo(() => {
+    if (!activeCategory) return articles;
+    return articles.filter(a => a.category === activeCategory);
+  }, [articles, activeCategory]);
+
+  const featuredArticle = filteredArticles[0];
+  const otherArticles = filteredArticles.slice(1);
 
   return (
     <>
@@ -28,127 +36,166 @@ export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
       <section className="py-6 border-y border-border">
         <div className="tg-container max-w-[840px]">
           <div className="flex flex-wrap items-center justify-center gap-2">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
+                activeCategory === null
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted hover:bg-primary hover:text-primary-foreground"
+              }`}
+              aria-pressed={activeCategory === null}
+            >
+              All
+            </button>
             {categories.map(category => (
               <button
                 key={category}
-                className="px-4 py-1.5 rounded-full text-sm font-medium bg-muted hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                onClick={() => setActiveCategory(activeCategory === category ? null : category)}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
+                  activeCategory === category
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted hover:bg-primary hover:text-primary-foreground"
+                }`}
+                aria-pressed={activeCategory === category}
               >
                 {category}
               </button>
             ))}
+            {activeCategory && (
+              <button
+                onClick={() => setActiveCategory(null)}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium bg-destructive/10 text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors duration-300"
+                aria-label="Clear filter"
+              >
+                <X className="w-3 h-3" />
+                Clear
+              </button>
+            )}
           </div>
         </div>
       </section>
 
       {/* Featured Article */}
-      <section className="py-10 md:py-12">
-        <div className="tg-container max-w-[720px]">
-          <h2 className="text-2xl mb-8 text-center">Featured Article</h2>
-          <Link to={`/blog/${featuredArticle.slug}`} className="group block rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-colors duration-300">
-            <div className="relative aspect-video overflow-hidden">
-              <img
-                src={featuredArticle.image}
-                alt={featuredArticle.title}
-                className="w-full h-full object-cover"
-                width={800}
-                height={450}
-                fetchPriority="high"
-              />
-              <span className="absolute top-4 left-4 px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-medium">
-                {featuredArticle.category}
-              </span>
-            </div>
-            <div className="p-6 md:p-8">
-              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
-                  {new Date(featuredArticle.date).toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric'
-                  })}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
-                  {featuredArticle.readTime}
+      {featuredArticle ? (
+        <section className="py-10 md:py-12">
+          <div className="tg-container max-w-[720px]">
+            <h2 className="text-2xl mb-8 text-center">
+              {activeCategory ? `Top in "${activeCategory}"` : "Featured Article"}
+            </h2>
+            <Link to={`/blog/${featuredArticle.slug}`} className="group block rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-colors duration-300">
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={featuredArticle.image}
+                  alt={featuredArticle.title}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={450}
+                  fetchPriority="high"
+                />
+                <span className="absolute top-4 left-4 px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-medium">
+                  {featuredArticle.category}
                 </span>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                {featuredArticle.title}
-              </h3>
-              <p className="text-muted-foreground mb-5 line-clamp-3 leading-relaxed">
-                {featuredArticle.excerpt}
-              </p>
-              <div className="flex items-center gap-2 text-primary font-semibold">
-                Read full article
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* Article Grid */}
-      <section className="py-10 md:py-12 border-t border-border">
-        <div className="tg-container max-w-[840px]">
-          <h2 className="text-2xl mb-8 text-center">Latest Articles</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {otherArticles.map((article) => (
-              <Link
-                key={article.id}
-                to={`/blog/${article.slug}`}
-                className="group rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-colors duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover"
-                    width={800}
-                    height={450}
-                    loading="lazy"
-                  />
-                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium">
-                    {article.category}
+              <div className="p-6 md:p-8">
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                  <span className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {new Date(featuredArticle.date).toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {featuredArticle.readTime}
                   </span>
                 </div>
-                <div className="p-5">
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2.5">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {new Date(article.date).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric'
-                      })}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {article.readTime}
-                    </span>
-                  </div>
-                  <h3 className="font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                    {article.excerpt}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {article.tags.slice(0, 3).map(tag => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center gap-1 px-2 py-0.5 bg-muted rounded-md text-xs text-muted-foreground"
-                      >
-                        <Tag className="w-3 h-3" />
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {featuredArticle.title}
+                </h3>
+                <p className="text-muted-foreground mb-5 line-clamp-3 leading-relaxed">
+                  {featuredArticle.excerpt}
+                </p>
+                <div className="flex items-center gap-2 text-primary font-semibold">
+                  Read full article
+                  <ArrowRight className="w-4 h-4" />
                 </div>
-              </Link>
-            ))}
+              </div>
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="py-10 md:py-12">
+          <div className="tg-container max-w-[720px] text-center">
+            <p className="text-muted-foreground">No articles found in this category.</p>
+          </div>
+        </section>
+      )}
+
+      {/* Article Grid */}
+      {otherArticles.length > 0 && (
+        <section className="py-10 md:py-12 border-t border-border">
+          <div className="tg-container max-w-[840px]">
+            <h2 className="text-2xl mb-8 text-center">Latest Articles</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {otherArticles.map((article) => (
+                <Link
+                  key={article.id}
+                  to={`/blog/${article.slug}`}
+                  className="group rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-colors duration-300"
+                >
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover"
+                      width={800}
+                      height={450}
+                      loading="lazy"
+                    />
+                    <span className="absolute top-3 left-3 px-2.5 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium">
+                      {article.category}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2.5">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {new Date(article.date).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric'
+                        })}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {article.readTime}
+                      </span>
+                    </div>
+                    <h3 className="font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {article.tags.slice(0, 3).map(tag => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center gap-1 px-2 py-0.5 bg-muted rounded-md text-xs text-muted-foreground"
+                        >
+                          <Tag className="w-3 h-3" />
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Newsletter */}
       <section className="py-8 border-t border-border text-center">
