@@ -7,11 +7,11 @@ routes = [
   { pattern = "www.sonbarsa.com", custom_domain = true }
 ]
 
-[[d1_databases]]
-binding = "DB"
-database_name = "sonbarsa-db"
-database_id = "dfd7782d-a322-4cef-8c41-295eb5a18f37"
-migrations_dir = "migrations"
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "sonbarsa-db"
+# database_id = "dfd7782d-a322-4cef-8c41-295eb5a18f37"
+# migrations_dir = "migrations"
 
 [assets]
 directory = "./dist"
