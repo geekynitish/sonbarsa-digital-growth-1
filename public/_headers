@@ -1,23 +1,26 @@
+# Hashed Astro assets (JS, CSS, SVGs) - 1 Year Immutable (Max Cloudflare TTL)
 /_astro/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
-/android-chrome-192x192.png
-  Cache-Control: public, max-age=31536000, immutable
+# Static images & brand assets - 1 Year Immutable (Max Cloudflare TTL)
+/img/*
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
-/android-chrome-512x512.png
-  Cache-Control: public, max-age=31536000, immutable
+/android-chrome-*.png
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
 /apple-touch-icon.png
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+
+/favicon*.png
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
 /favicon.ico
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
-/favicon-32x32.png
-  Cache-Control: public, max-age=604800
+/site.webmanifest
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
-/favicon-16x16.png
-  Cache-Control: public, max-age=604800
-
+# Static HTML Pages - 24 Hr Browser Cache, 1 Month Cloudflare Edge Cache with background revalidation
 /*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=86400, s-maxage=2592000, stale-while-revalidate=604800

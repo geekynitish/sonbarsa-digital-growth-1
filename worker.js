@@ -329,7 +329,41 @@ export default {
       return handleLeadsDashboard(request, env);
     }
 
-    // Default: Serve Astro static assets
-    return env.ASSETS.fetch(request);
+    // Default: Serve Astro static assets with maximum Cloudflare Edge + Browser caching
+    const response = await env.ASSETS.fetch(request);
+
+    // If upstream response already contains explicit cache headers, return directly
+    const existingCacheControl = response.headers.get("Cache-Control");
+    if (existingCacheControl && !existingCacheControl.includes("max-age=0")) {
+      return response;
+    }
+
+    const newHeaders = new Headers(response.headers);
+    const path = url.pathname;
+
+    if (
+      path.startsWith("/_astro/") ||
+      path.startsWith("/img/") ||
+      path.endsWith(".png") ||
+      path.endsWith(".jpg") ||
+      path.endsWith(".jpeg") ||
+      path.endsWith(".svg") ||
+      path.endsWith(".webp") ||
+      path.endsWith(".ico") ||
+      path.endsWith(".woff2") ||
+      path.endsWith(".webmanifest")
+    ) {
+      // Static assets: 1 Year (31,536,000s) Browser & Edge Cache
+      newHeaders.set("Cache-Control", "public, max-age=31536000, s-maxage=31536000, immutable");
+    } else {
+      // HTML pages: 24 Hours Browser Cache, 30 Days Cloudflare Edge Cache
+      newHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=2592000, stale-while-revalidate=604800");
+    }
+
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: newHeaders,
+    });
   },
 };
