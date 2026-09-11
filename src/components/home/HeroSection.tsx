@@ -1,5 +1,4 @@
 import { ArrowRight, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/router-shim";
 
 export const HeroSection = () => {
@@ -22,19 +21,22 @@ export const HeroSection = () => {
           India, the UK, and the Middle East trust us to ship, not just prototype.
         </p>
 
-        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" asChild>
-            <Link to="/services">
-              Explore AI Solutions
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link to="/contact">
-              <Calendar className="w-4 h-4" />
-              Book a Consultation
-            </Link>
-          </Button>
+        <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full font-medium text-sm bg-foreground/5 hover:bg-foreground/10 text-foreground border border-border/80 hover:border-foreground/20 transition-all group"
+          >
+            <span>Explore AI Solutions</span>
+            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:translate-x-1 group-hover:text-foreground transition-all" />
+          </Link>
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group border border-transparent hover:border-border"
+          >
+            <Calendar className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+            <span>Book a Consultation</span>
+          </Link>
         </div>
 
         <dl className="mt-8 sm:mt-10 grid grid-cols-4 gap-4 sm:gap-8">
