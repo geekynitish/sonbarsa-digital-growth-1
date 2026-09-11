@@ -6,19 +6,19 @@ import { services } from "@/data/services";
 export const AllServicesList = () => (
   <>
     {/* Hero */}
-    <section className="pt-20 pb-16 text-center">
+    <section className="pt-20 pb-6 md:pt-24 md:pb-8 text-center">
       <div className="tg-container max-w-[640px]">
-        <p className="text-sm font-medium text-muted-foreground mb-5">Our Services</p>
+        <p className="text-sm font-medium text-muted-foreground mb-4">Our Services</p>
         <h1 className="text-4xl sm:text-5xl leading-[1.1] tracking-tight">
           Full-stack digital solutions for{" "}
           <span className="text-accent-word">your business</span>.
         </h1>
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
           From strategy to execution, we provide end-to-end technology services
           that help businesses grow and scale in the digital era.
         </p>
 
-        <p className="mt-8 text-xs font-medium text-muted-foreground">
+        <p className="mt-6 text-xs font-medium text-muted-foreground">
           Powered by the latest AI stack
         </p>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
@@ -36,7 +36,7 @@ export const AllServicesList = () => (
     </section>
 
     {/* Services */}
-    <section className="py-16 md:py-20 border-t border-border">
+    <section className="py-10 md:py-14 border-t border-border">
       <div className="tg-container max-w-[640px] divide-y divide-border">
         {services.map((service) => (
           <Link

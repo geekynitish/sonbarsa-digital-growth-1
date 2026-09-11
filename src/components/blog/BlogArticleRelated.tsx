@@ -5,7 +5,7 @@ export const BlogArticleRelated = ({ relatedArticles }: { relatedArticles: Artic
   <>
     {/* Related Articles */}
     {relatedArticles.length > 0 && (
-      <section className="py-16 border-t border-border">
+      <section className="py-10 md:py-12 border-t border-border">
         <div className="tg-container max-w-[720px]">
           <h2 className="text-2xl mb-8 text-center">Related Articles</h2>
           <div className="grid sm:grid-cols-3 gap-4">
@@ -39,7 +39,7 @@ export const BlogArticleRelated = ({ relatedArticles }: { relatedArticles: Artic
     )}
 
     {/* CTA */}
-    <section className="py-10 border-t border-border text-center">
+    <section className="py-8 border-t border-border text-center">
       <p className="text-sm text-muted-foreground">
         Want help with your digital presence? <Link to="/contact" className="text-primary font-medium hover:underline">Get in touch</Link>.
       </p>

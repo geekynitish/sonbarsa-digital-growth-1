@@ -37,7 +37,7 @@ const getInitials = (name: string) =>
 
 export const TeamSection = () => {
   return (
-    <section id="team" className="py-16 md:py-24 border-t border-border">
+    <section id="team" className="py-10 md:py-14 border-t border-border">
       <div className="tg-container max-w-[720px] text-center">
         <h2 className="text-2xl sm:text-3xl mb-4">
           Meet the team &amp; <span className="text-accent-word">advisory board</span>

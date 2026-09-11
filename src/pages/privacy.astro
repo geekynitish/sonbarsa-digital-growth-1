@@ -1,0 +1,106 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Privacy Policy | SonBarsa",
+  url: "https://sonbarsa.com/privacy",
+  description: "SonBarsa Privacy Policy outlining how we collect, protect, and handle client and visitor data.",
+  isPartOf: { "@id": "https://sonbarsa.com/#website" },
+};
+---
+
+<Layout
+  title="Privacy Policy | SonBarsa"
+  description="Read SonBarsa's Privacy Policy. Learn how we protect personal information, maintain enterprise-grade security, and respect your privacy."
+  canonical="https://sonbarsa.com/privacy"
+  robots="noindex, follow"
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load pathname={Astro.url.pathname} />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <section class="pt-20 pb-6 md:pt-24 md:pb-8 text-center">
+      <div class="tg-container max-w-[680px]">
+        <p class="text-sm font-medium text-muted-foreground mb-3">Legal</p>
+        <h1 class="text-3xl sm:text-4xl leading-tight tracking-tight">
+          Privacy <span class="text-accent-word">Policy</span>
+        </h1>
+        <p class="mt-4 text-sm text-muted-foreground">
+          Last updated: January 2026
+        </p>
+      </div>
+    </section>
+
+    <section class="py-8 md:py-12 border-t border-border">
+      <div class="tg-container max-w-[680px] space-y-8 text-muted-foreground leading-relaxed text-sm sm:text-base">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">1. Introduction</h2>
+          <p>
+            SonBarsa ("we," "our," or "us") respects your privacy and is committed to protecting the personal
+            data you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard
+            your information when you visit our website <a href="https://sonbarsa.com" class="text-primary hover:underline">sonbarsa.com</a> or engage our technology and AI services.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">2. Information We Collect</h2>
+          <p class="mb-3">We may collect information about you in a variety of ways:</p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong>Personal Information:</strong> Name, business email address, phone number, company name, and project specifications provided voluntarily via our contact forms or consultations.</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, operating system, pages visited, and referring URLs collected automatically via standard cookies and analytics.</li>
+            <li><strong>Client Project Data:</strong> Data and models shared under Non-Disclosure Agreements (NDAs) for artificial intelligence, machine learning, or software development engagements.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">3. How We Use Your Information</h2>
+          <p class="mb-3">We use collected information for genuine business purposes, including:</p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li>Responding to inquiries, project proposals, and consultation requests.</li>
+            <li>Delivering, maintaining, and improving our AI, ML, cloud, and digital services.</li>
+            <li>Ensuring technical stability, security, and performance of our digital infrastructure.</li>
+            <li>Complying with applicable legal obligations and industry standards.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">4. Data Protection &amp; Confidentiality</h2>
+          <p>
+            Enterprise security is fundamental to our engineering standards. All client code, machine learning
+            models, proprietary datasets, and business logic are treated with strict confidentiality under bilateral
+            NDAs. We implement appropriate technical, organizational, and encryption safeguards to prevent
+            unauthorized access or disclosure.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">5. Third-Party Services</h2>
+          <p>
+            We do not sell, trade, or rent your personal information to third parties. We may employ trusted
+            third-party service providers (such as cloud hosting, analytics, and infrastructure vendors) solely
+            to assist in operating our services, under strict confidentiality terms.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">6. Contact Us</h2>
+          <p>
+            If you have any questions regarding this Privacy Policy or your data, please contact our data team at:
+          </p>
+          <p class="mt-2 font-medium text-foreground">
+            Email: <a href="mailto:lali@sonbarsa.com" class="text-primary hover:underline">lali@sonbarsa.com</a><br />
+            Phone: <a href="tel:+911416761830" class="text-primary hover:underline">+91 141 676 1830</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

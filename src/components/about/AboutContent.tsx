@@ -77,13 +77,13 @@ export const AboutContent = () => {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 text-center">
+      <section className="pt-20 pb-6 md:pt-24 md:pb-8 text-center">
         <div className="tg-container max-w-[640px]">
-          <p className="text-sm font-medium text-muted-foreground mb-5">About Us</p>
+          <p className="text-sm font-medium text-muted-foreground mb-4">About Us</p>
           <h1 className="text-4xl sm:text-5xl leading-[1.1] tracking-tight">
             Making technology <span className="text-accent-word">accessible</span>.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
             Since 2008, delivering world-class digital solutions with a personalised
             approach for business critical technology needs.
           </p>
@@ -91,9 +91,9 @@ export const AboutContent = () => {
       </section>
 
       {/* Story */}
-      <section className="py-16 md:py-20 border-t border-border">
+      <section className="py-10 md:py-14 border-t border-border">
         <div className="tg-container max-w-[640px]">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-center">Our story</h2>
+          <h2 className="text-2xl sm:text-3xl mb-5 text-center">Our story</h2>
 
           <p className="text-muted-foreground leading-relaxed">
             At SonBarsa, we believe in making the latest in technology accessible to your
@@ -104,7 +104,7 @@ export const AboutContent = () => {
             274+ clients across three continents.
           </p>
 
-          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 py-10">
+          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 py-6 sm:py-8">
             {[
               { value: "15+", label: "Years Experience" },
               { value: "274+", label: "Happy Clients" },
@@ -439,14 +439,14 @@ export const AboutContent = () => {
       <TechStackSection />
 
       {/* Values */}
-      <section className="py-16 md:py-20 border-t border-border">
+      <section className="py-10 md:py-14 border-t border-border">
         <div className="tg-container max-w-[720px] text-center">
           <h2 className="text-2xl sm:text-3xl mb-4">Our core values</h2>
           <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
             The principles that guide everything we do at SonBarsa.
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-12 text-left">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 text-left">
             {values.map((value) => (
               <div key={value.title} className="rounded-xl border border-border p-6 text-center">
                 <value.icon className="w-6 h-6 text-primary mx-auto mb-4" strokeWidth={1.75} />

@@ -10,7 +10,7 @@ import type { Article } from "@/data/articles";
 export const BlogArticleBody = ({ article }: { article: Article }) => (
   <>
     {/* Hero */}
-    <section className="pt-20 pb-10 text-center">
+    <section className="pt-12 pb-6 md:pt-14 md:pb-8 text-center">
       <div className="tg-container max-w-[720px]">
         <Link
           to="/blog"

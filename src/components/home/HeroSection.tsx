@@ -1,8 +1,8 @@
 export const HeroSection = () => {
   return (
-    <section className="min-h-[85vh] flex items-center justify-center py-20">
+    <section className="pt-20 pb-6 md:pt-24 md:pb-8 flex items-center justify-center">
       <div className="tg-container text-center">
-        <p className="text-sm font-medium text-muted-foreground mb-5">
+        <p className="text-sm font-medium text-muted-foreground mb-3">
           AI &amp; digital growth partner since 2008
         </p>
 
@@ -11,14 +11,14 @@ export const HeroSection = () => {
           <span className="text-accent-word">Real business growth.</span>
         </h1>
 
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
           We build generative AI, LLM, computer vision, and predictive
           analytics products — then wrap them in the web, mobile, and
           marketing systems that turn them into revenue. 274+ clients across
           India, the UK, and the Middle East trust us to ship, not just prototype.
         </p>
 
-        <dl className="mt-16 grid grid-cols-4 gap-4 sm:gap-8">
+        <dl className="mt-6 sm:mt-8 grid grid-cols-4 gap-4 sm:gap-8">
           {[
             { value: "274+", label: "Clients" },
             { value: "421+", label: "Projects" },

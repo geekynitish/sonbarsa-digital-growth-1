@@ -42,13 +42,13 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section className="py-16 md:py-24 border-t border-border">
+    <section className="py-6 md:py-8 border-t border-border">
       <div className="tg-container max-w-[720px]">
-        <h2 className="text-2xl sm:text-3xl text-center mb-14">
+        <h2 className="text-2xl sm:text-3xl text-center mb-6">
           What we <span className="text-accent-word">build</span>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
           {services.map((service) => (
             <Link key={service.title} to={service.href} className="group flex gap-4">
               <service.icon className="w-6 h-6 shrink-0 text-primary mt-0.5" strokeWidth={1.75} />

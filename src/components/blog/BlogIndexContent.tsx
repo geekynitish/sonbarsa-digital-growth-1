@@ -11,13 +11,13 @@ export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 text-center">
+      <section className="pt-12 pb-8 md:pt-16 md:pb-10 text-center">
         <div className="tg-container max-w-[640px]">
-          <p className="text-sm font-medium text-muted-foreground mb-5">Industry Insights</p>
+          <p className="text-sm font-medium text-muted-foreground mb-4">Industry Insights</p>
           <h1 className="text-4xl sm:text-5xl leading-[1.1] tracking-tight">
             Knowledge hub for <span className="text-accent-word">digital growth</span>.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
             Expert articles on digital marketing, web development, cloud computing, and
             business transformation strategies.
           </p>
@@ -41,7 +41,7 @@ export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
       </section>
 
       {/* Featured Article */}
-      <section className="py-16">
+      <section className="py-10 md:py-12">
         <div className="tg-container max-w-[720px]">
           <h2 className="text-2xl mb-8 text-center">Featured Article</h2>
           <Link to={`/blog/${featuredArticle.slug}`} className="group block rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-colors duration-300">
@@ -89,7 +89,7 @@ export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
       </section>
 
       {/* Article Grid */}
-      <section className="py-16 border-t border-border">
+      <section className="py-10 md:py-12 border-t border-border">
         <div className="tg-container max-w-[840px]">
           <h2 className="text-2xl mb-8 text-center">Latest Articles</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -151,7 +151,7 @@ export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
       </section>
 
       {/* Newsletter */}
-      <section className="py-10 border-t border-border text-center">
+      <section className="py-8 border-t border-border text-center">
         <p className="text-sm text-muted-foreground">
           Want more like this? <Link to="/contact" className="text-primary font-medium hover:underline">Get in touch</Link> and we'll keep you posted.
         </p>

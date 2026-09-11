@@ -28,13 +28,13 @@ const contactInfo = [
 export const ContactInfo = () => (
   <>
     {/* Hero */}
-    <section className="pt-20 pb-16 text-center">
+    <section className="pt-20 pb-6 md:pt-24 md:pb-8 text-center">
       <div className="tg-container max-w-[640px]">
-        <p className="text-sm font-medium text-muted-foreground mb-5">Contact Us</p>
+        <p className="text-sm font-medium text-muted-foreground mb-4">Contact Us</p>
         <h1 className="text-4xl sm:text-5xl leading-[1.1] tracking-tight">
           Let's build something <span className="text-accent-word">amazing together</span>.
         </h1>
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
           We work with ambitious leaders who want to define the future, not hide from it.
           Together, we achieve extraordinary outcomes.
         </p>
@@ -42,7 +42,7 @@ export const ContactInfo = () => (
     </section>
 
     {/* Contact Info */}
-    <section className="py-12 border-t border-border">
+    <section className="py-8 md:py-10 border-t border-border">
       <div className="tg-container max-w-[640px]">
         <h2 className="sr-only">Contact information</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">

@@ -9,9 +9,9 @@ const clients = [
 
 export const ClientsSection = () => {
   return (
-    <section className="py-16 border-t border-border">
+    <section className="py-6 md:py-8 border-t border-border">
       <div className="tg-container max-w-[640px] text-center">
-        <p className="text-sm font-medium text-muted-foreground mb-6">
+        <p className="text-sm font-medium text-muted-foreground mb-3">
           Trusted by
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">

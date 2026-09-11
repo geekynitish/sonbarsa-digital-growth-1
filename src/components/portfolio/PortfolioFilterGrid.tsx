@@ -207,7 +207,7 @@ export const PortfolioFilterGrid = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="tg-container max-w-[840px]">
           <h2 className="sr-only">Our projects</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

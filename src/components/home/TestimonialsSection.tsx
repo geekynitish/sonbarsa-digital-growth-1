@@ -29,7 +29,7 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-16 md:py-24 border-t border-border">
+    <section className="py-10 md:py-14 border-t border-border">
       <div className="tg-container max-w-[720px] text-center">
         <h2 className="text-2xl sm:text-3xl mb-4">
           What clients say about <span className="text-accent-word">working with us</span>
@@ -38,7 +38,7 @@ export const TestimonialsSection = () => {
           Real results from real businesses — see how our partnerships drive measurable growth.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-6 pt-12 text-left">
+        <div className="grid sm:grid-cols-2 gap-6 pt-8 text-left">
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="rounded-xl border border-border p-6">
               <Quote className="w-5 h-5 text-primary mb-4" />

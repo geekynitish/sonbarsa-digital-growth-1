@@ -11,14 +11,14 @@ const industries = [
 ];
 
 export const PortfolioIndustries = () => (
-  <section className="py-16 md:py-20 border-t border-border">
+  <section className="py-10 md:py-14 border-t border-border">
     <div className="tg-container max-w-[720px] text-center">
       <h2 className="text-2xl sm:text-3xl mb-4">Industries we serve</h2>
       <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
         Our expertise spans across multiple industries, delivering tailored solutions for each.
       </p>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-8">
         {industries.map((industry) => (
           <div key={industry.name} className="rounded-xl border border-border p-6 text-center">
             <h3 className="font-bold mb-1.5">{industry.name}</h3>

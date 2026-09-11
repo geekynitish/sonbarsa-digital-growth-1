@@ -1,0 +1,100 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Footer } from "@/components/layout/Footer";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Terms of Service | SonBarsa",
+  url: "https://sonbarsa.com/terms",
+  description: "SonBarsa Terms of Service governing the use of our website, digital solutions, and professional engineering services.",
+  isPartOf: { "@id": "https://sonbarsa.com/#website" },
+};
+---
+
+<Layout
+  title="Terms of Service | SonBarsa"
+  description="Review the Terms of Service for SonBarsa. Outlining service agreements, intellectual property rights, and terms of engagement."
+  canonical="https://sonbarsa.com/terms"
+  robots="noindex, follow"
+  jsonLd={jsonLd}
+>
+  <SiteHeader client:load pathname={Astro.url.pathname} />
+  <GoogleAnalytics client:idle />
+
+  <main>
+    <section class="pt-20 pb-6 md:pt-24 md:pb-8 text-center">
+      <div class="tg-container max-w-[680px]">
+        <p class="text-sm font-medium text-muted-foreground mb-3">Legal</p>
+        <h1 class="text-3xl sm:text-4xl leading-tight tracking-tight">
+          Terms of <span className="text-accent-word">Service</span>
+        </h1>
+        <p class="mt-4 text-sm text-muted-foreground">
+          Last updated: January 2026
+        </p>
+      </div>
+    </section>
+
+    <section class="py-8 md:py-12 border-t border-border">
+      <div class="tg-container max-w-[680px] space-y-8 text-muted-foreground leading-relaxed text-sm sm:text-base">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">1. Agreement to Terms</h2>
+          <p>
+            By accessing or using <a href="https://sonbarsa.com" class="text-primary hover:underline">sonbarsa.com</a> or engaging SonBarsa for software development, artificial intelligence, machine learning, cloud, or digital marketing services, you agree to be bound by these Terms of Service.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">2. Professional Services &amp; SOWs</h2>
+          <p>
+            All custom engineering, AI/ML development, consulting, and deployment engagements are governed by
+            individual Statements of Work (SOW) or Master Services Agreements (MSA) executed between SonBarsa
+            and the client. In case of any conflict between these general Terms and an executed SOW/MSA, the specific SOW/MSA shall prevail.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">3. Intellectual Property Rights</h2>
+          <p class="mb-3">
+            Unless explicitly agreed otherwise in a signed contract:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong>Client Deliverables:</strong> Custom code, models, and workflows developed specifically for the client transfer to the client upon full receipt of agreed payment.</li>
+            <li><strong>SonBarsa Pre-existing IP:</strong> Proprietary frameworks, internal accelerators, and generic tooling developed independently by SonBarsa remain the intellectual property of SonBarsa.</li>
+            <li><strong>Website Content:</strong> All content, designs, graphics, and trademarks on sonbarsa.com are owned by SonBarsa and protected by international copyright laws.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">4. Limitation of Liability</h2>
+          <p>
+            In no event shall SonBarsa, its directors, or its team be liable for any indirect, incidental, special,
+            or consequential damages arising out of or in connection with website access or reliance on general materials published here.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">5. Governing Law</h2>
+          <p>
+            These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions. Any legal disputes shall be subject to the exclusive jurisdiction of the competent courts in Jaipur, Rajasthan, India.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-foreground mb-3">6. Contact Information</h2>
+          <p>
+            For any legal notices or questions regarding these Terms, please contact us at:
+          </p>
+          <p class="mt-2 font-medium text-foreground">
+            Email: <a href="mailto:lali@sonbarsa.com" class="text-primary hover:underline">lali@sonbarsa.com</a><br />
+            Phone: <a href="tel:+911416761830" class="text-primary hover:underline">+91 141 676 1830</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

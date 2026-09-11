@@ -45,9 +45,9 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className="py-16 md:py-20 border-t border-border">
+    <section className="py-10 md:py-14 border-t border-border">
       <div className="tg-container max-w-[560px]">
-        <h2 className="text-2xl sm:text-3xl text-center mb-10">Send us a message</h2>
+        <h2 className="text-2xl sm:text-3xl text-center mb-8">Send us a message</h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid sm:grid-cols-2 gap-6">

@@ -55,9 +55,9 @@ const products = [
 
 export const ProductsSection = () => {
   return (
-    <section className="py-16 md:py-24 border-t border-border">
+    <section className="py-10 md:py-14 border-t border-border">
       <div className="tg-container max-w-[840px]">
-        <div className="text-center max-w-md mx-auto mb-14">
+        <div className="text-center max-w-md mx-auto mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl mb-4">
             AI products <span className="text-accent-word">in production</span>
           </h2>

@@ -12,7 +12,7 @@ import {
 
 export const CofounderSpotlight = () => {
   return (
-    <section className="py-16 md:py-20 border-t border-border">
+    <section className="py-10 md:py-14 border-t border-border">
       <div className="tg-container max-w-[640px]">
         <div className="text-center mb-10">
           <p className="text-sm font-medium text-muted-foreground mb-5 flex items-center justify-center gap-2">

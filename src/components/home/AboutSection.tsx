@@ -13,9 +13,9 @@ const features = [
 
 export const AboutSection = () => {
   return (
-    <section className="py-16 md:py-24 border-t border-border">
+    <section className="py-6 md:py-8 border-t border-border">
       <div className="tg-container max-w-[640px] text-center">
-        <h2 className="text-2xl sm:text-3xl mb-6">
+        <h2 className="text-2xl sm:text-3xl mb-4">
           Building intelligent <span className="text-accent-word">AI systems</span>
         </h2>
 
@@ -26,7 +26,7 @@ export const AboutSection = () => {
           computer vision to generative AI products.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-3 pt-8 text-left max-w-md mx-auto">
+        <div className="grid sm:grid-cols-2 gap-3 pt-5 text-left max-w-md mx-auto">
           {features.map((feature) => (
             <div key={feature} className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -35,7 +35,7 @@ export const AboutSection = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3 justify-center pt-8">
+        <div className="flex flex-wrap gap-3 justify-center pt-5">
           <Button size="lg" asChild>
             <Link to="/about">
               Learn more about us

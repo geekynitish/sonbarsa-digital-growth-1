@@ -35,7 +35,7 @@ const reasons = [
 
 export const WhyUsSection = () => {
   return (
-    <section className="py-16 md:py-24 border-t border-border bg-secondary text-secondary-foreground">
+    <section className="py-10 md:py-14 border-t border-border bg-secondary text-secondary-foreground">
       <div className="tg-container max-w-[720px] text-center">
         <h2 className="text-2xl sm:text-3xl mb-4">
           One size fits all is <span className="text-accent-word">not our theory</span>
