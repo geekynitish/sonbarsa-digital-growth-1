@@ -59,11 +59,10 @@ export const ProductsSection = () => {
       <div className="tg-container max-w-[840px]">
         <div className="text-center max-w-md mx-auto mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl mb-4">
-            AI products <span className="text-accent-word">in production</span>
+            Digital &amp; AI Products <span className="text-accent-word">in Production</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Real AI products we've built and deployed — from conversational AI to
-            computer vision, each one live and serving real users.
+            Real custom web tools, enterprise SaaS platforms, and intelligent AI solutions we&apos;ve built and deployed — live and serving real business users.
           </p>
         </div>
 

@@ -6,19 +6,16 @@ export const HeroSection = () => {
     <section className="pt-20 pb-6 md:pt-24 md:pb-8 flex items-center justify-center">
       <div className="tg-container text-center">
         <p className="text-sm font-medium text-muted-foreground mb-3">
-          AI &amp; digital growth partner since 2008
+          Custom Software &amp; Digital Growth Partner since 2008
         </p>
 
         <h1 className="text-4xl sm:text-5xl leading-[1.1] tracking-tight">
-          Real AI products.{" "}
-          <span className="text-accent-word">Real business growth.</span>
+          Complete Software &amp; Digital Solutions.{" "}
+          <span className="text-accent-word">Real Business Growth.</span>
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-          We build generative AI, LLM, computer vision, and predictive
-          analytics products — then wrap them in the web, mobile, and
-          marketing systems that turn them into revenue. 274+ clients across
-          India, the UK, and the Middle East trust us to ship, not just prototype.
+          We build custom web &amp; mobile apps, enterprise FinTech software, digital marketing &amp; SEO systems, and smart AI solutions — turning technology into measurable revenue. 274+ clients across India, the UK, and the Middle East trust us to build, scale, and deliver.
         </p>
 
         <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
@@ -26,7 +23,7 @@ export const HeroSection = () => {
             to="/services"
             className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full font-medium text-sm bg-foreground/5 hover:bg-foreground/10 text-foreground border border-border/80 hover:border-foreground/20 transition-all group"
           >
-            <span>Explore AI Solutions</span>
+            <span>Explore Our Services</span>
             <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:translate-x-1 group-hover:text-foreground transition-all" />
           </Link>
 
