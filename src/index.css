@@ -23,7 +23,7 @@
     --secondary-foreground: 0 0% 98%;
 
     --muted: 220 20% 97%;
-    --muted-foreground: 220 10% 45%;
+    --muted-foreground: 220 10% 36%;
 
     /* Accent - Logo Blue, used sparingly */
     --accent: 210 85% 38%;
@@ -65,7 +65,7 @@
     --secondary-foreground: 220 15% 94%;
 
     --muted: 220 16% 16%;
-    --muted-foreground: 220 10% 60%;
+    --muted-foreground: 220 12% 70%;
 
     --accent: 210 80% 52%;
     --accent-foreground: 0 0% 100%;
