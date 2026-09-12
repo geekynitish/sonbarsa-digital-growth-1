@@ -1,13 +1,14 @@
 import { Link } from "@/lib/router-shim";
 import { X, Linkedin, Instagram } from "lucide-react";
 import logo from "@/assets/logo.svg?url";
+import { BlogIcon } from "@/components/icons/BlogIcon";
 
 const footerLinks = {
   about: [
     { name: "About Us", href: "/about" },
     { name: "Our Team", href: "/about#team" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Blog", href: "/blog" },
+    { name: "Tech Blog", href: "https://blog.sonbarsa.com/" },
   ],
   services: [
     { name: "AI & Machine Learning", href: "/services/ai-ml" },
@@ -29,6 +30,7 @@ const socialLinks = [
   { icon: X, href: "https://twitter.com/sonbarsa", label: "X (Twitter)" },
   { icon: Linkedin, href: "https://linkedin.com/company/sonbarsa", label: "LinkedIn" },
   { icon: Instagram, href: "https://instagram.com/sonbarsa", label: "Instagram" },
+  { icon: BlogIcon, href: "https://blog.sonbarsa.com/", label: "Official Blog" },
 ];
 
 export const Footer = () => {
@@ -64,16 +66,21 @@ export const Footer = () => {
           <div>
             <p className="text-sm font-bold mb-2.5">About</p>
             <ul>
-              {footerLinks.about.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="block py-1.5 text-[14px] leading-[23px] text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {footerLinks.about.map((link) => {
+                const isExternal = link.href.startsWith("http");
+                return (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      className="block py-1.5 text-[14px] leading-[23px] text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

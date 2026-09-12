@@ -21,7 +21,7 @@ const navLinks = [
   },
   { name: "About", href: "/about" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Blog", href: "/blog" },
+  { name: "Tech Blog", href: "https://blog.sonbarsa.com/" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -75,6 +75,8 @@ export const Navbar = ({ pathname }: NavbarProps) => {
             >
               <Link
                 to={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className={cn(
                   "tg-nav-link flex items-center gap-1 py-2 text-[15px]",
                   normalizedPathname === link.href && "is-active"
@@ -148,6 +150,8 @@ export const Navbar = ({ pathname }: NavbarProps) => {
             <div key={link.name}>
               <Link
                 to={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className={cn(
                   "block px-3 py-2.5 rounded-lg font-medium transition-colors",
                   normalizedPathname === link.href

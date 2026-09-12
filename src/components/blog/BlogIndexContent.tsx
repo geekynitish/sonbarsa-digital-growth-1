@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "@/lib/router-shim";
 import type { Article } from "@/data/articles";
-import { Calendar, Clock, ArrowRight, Tag, X, Search } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Tag, X, Search, ExternalLink } from "lucide-react";
 
 export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -40,6 +40,18 @@ export const BlogIndexContent = ({ articles }: { articles: Article[] }) => {
       {/* Hero */}
       <section className="pt-12 pb-8 md:pt-16 md:pb-10 text-center">
         <div className="tg-container max-w-[640px]">
+          <div className="mb-4">
+            <a
+              href="https://blog.sonbarsa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/15 transition-colors"
+            >
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span>Visit Official Tech Blog (blog.sonbarsa.com)</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
           <p className="text-sm font-medium text-muted-foreground mb-4">Industry Insights</p>
           <h1 className="text-4xl sm:text-5xl leading-[1.1] tracking-tight">
             Knowledge hub for <span className="text-accent-word">digital growth</span>.
